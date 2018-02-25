@@ -1,0 +1,141 @@
+
+******************************************
+*            Example from MLM            *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[x6=1@3,x5=0@3,x4=1@3,x3=0@3,x2=0@3,x1=0@3,x031=0@2,x021=1@1]
+Statistics: clauses=6, variables=8, units=10, decisions=6, conflicts=1, learned clauses=1
+
+******************************************
+*            Example from MZ             *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[x12=0@7,x10=0@7,x9=0@6,x8=1@5,x7=0@4,x11=1@3,x2=0@3,x3=0@2,
+ x4=1@1,x1=0@1]
+Statistics: clauses=8, variables=10, units=5, decisions=8, conflicts=1, learned clauses=1
+
+******************************************
+*            Example from MS             *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[x7=0@7,x6=0@6,x5=1@6,x4=1@6,x3=1@6,x2=1@6,x1=0@6,dx13=0@5,
+ dx12=0@4,cx11=1@3,bx10=0@2,ax9=0@1]
+Statistics: clauses=9, variables=13, units=10, decisions=11, conflicts=1, learned clauses=1
+
+******************************************
+*              Pigeonhole 2              *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=9, variables=6, units=9, decisions=2, conflicts=2, learned clauses=2
+
+******************************************
+*                Queens 4                *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[p42=1@3,p44=0@3,p34=1@3,p32=0@3,p41=0@3,p21=1@3,p24=0@3,p31=0@3,
+ p22=0@3,p43=0@3,p33=0@3,p23=0@3,p14=0@3,p13=1@3,p12=0@2,p11=0@1]
+Statistics: clauses=80, variables=16, units=25, decisions=5, conflicts=1, learned clauses=1
+
+******************************************
+*       Tseitin example from MLCS        *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=12, variables=5, units=10, decisions=6, conflicts=4, learned clauses=4
+
+******************************************
+*    Tseitin example from MLCS (sat)     *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[t=1@2,s=1@2,r=1@2,q=1@1,p=1@1]
+Statistics: clauses=12, variables=5, units=10, decisions=6, conflicts=3, learned clauses=3
+
+******************************************
+*              Tseitin K2,2              *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=8, variables=4, units=6, decisions=2, conflicts=2, learned clauses=2
+
+******************************************
+*           Tseitin K2,2 (sat)           *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[p3=0@1,p2=1@1,p1=0@1,p0=1@1]
+Statistics: clauses=8, variables=4, units=6, decisions=2, conflicts=1, learned clauses=1
+
+******************************************
+*           Tseitin K3,3 (sat)           *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[p8=0@4,p7=0@4,p5=1@4,p4=1@4,p6=0@3,p3=0@3,p2=0@2,p1=1@2,
+ p0=0@1]
+Statistics: clauses=24, variables=9, units=23, decisions=12, conflicts=5, learned clauses=5
+
+******************************************
+*            Grid pebbling 2             *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=8, variables=6, units=7, decisions=2, conflicts=2, learned clauses=2
+
+******************************************
+*              Pigeonhole 3              *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=22, variables=12, units=25, decisions=10, conflicts=3, learned clauses=3
+
+******************************************
+*              Tseitin K3,3              *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=24, variables=9, units=60, decisions=30, conflicts=16, learned clauses=16
+
+******************************************
+*            Grid pebbling 3             *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=17, variables=12, units=17, decisions=9, conflicts=3, learned clauses=3
+
+******************************************
+*        Tseitin K3,3 (ordering)         *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=24, variables=9, units=60, decisions=30, conflicts=16
+
+******************************************
+*            MLM (lookahead)             *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[x6=1,x5=0,x031=1,x2=1,x3=0,x1=0,x4=0]
+Statistics: clauses=6, variables=8, units=4, decisions=3, conflicts=0
+
+******************************************
+*             MZ (lookahead)             *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[x2=1,x11=0,x12=0,x10=0,x3=0,x8=1,x4=1,x1=0,
+ x7=0]
+Statistics: clauses=8, variables=10, units=6, decisions=6, conflicts=1
+
+******************************************
+*             MS (lookahead)             *
+******************************************
+LearnSAT (version 2.0)
+Satisfying assignments:
+[x7=0,x5=0,dx13=0,ax9=1,x3=0,x4=0,x2=1,x1=0]
+Statistics: clauses=9, variables=13, units=3, decisions=5, conflicts=0

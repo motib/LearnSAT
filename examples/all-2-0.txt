@@ -1,0 +1,4440 @@
+
+******************************************
+*            Example from MLM            *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[x021,~x4,~x6],[x1,x031,~x2],[x1,~x3],[x2,x3,x4],[x5,x6],[~x4,~x5]]
+Decision assignment: x021=0@1
+Variables: [x021,x031,x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x021=0@1]
+Current set of clauses:
+[[x1,x031,~x2],[x1,~x3],[x2,x3,x4],[x5,x6],[~x4,~x5],[~x4,~x6]]
+Decision assignment: x031=0@2
+Variables: [x031,x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x021=0@1,x031=0@2]
+Current set of clauses:
+[[x1,~x2],[x1,~x3],[x2,x3,x4],[x5,x6],[~x4,~x5],[~x4,~x6]]
+Decision assignment: x1=0@3
+Variables: [x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x021=0@1,x031=0@2,x1=0@3]
+Current set of clauses:
+[[x2,x3,x4],[x5,x6],[~x2],[~x3],[~x4,~x5],[~x4,~x6]]
+Propagate unit: ~x2 (x2=0@3) derived from: [x1,x031,~x2]
+Assignments so far:
+[x021=0@1,x031=0@2,x1=0@3,x2=0@3]
+Current set of clauses:
+[[x3,x4],[x5,x6],[~x3],[~x4,~x5],[~x4,~x6]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3
+]
+Propagate unit: ~x3 (x3=0@3) derived from: [x1,~x3]
+Assignments so far:
+[x021=0@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3]
+Current set of clauses:
+[[x4],[x5,x6],[~x4,~x5],[~x4,~x6]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3
+]
+Propagate unit:  x4 (x4=1@3) derived from: [x2,x3,x4]
+Assignments so far:
+[x021=0@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3]
+Current set of clauses:
+[[x5,x6],[~x5],[~x6]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3
+]
+Propagate unit: ~x5 (x5=0@3) derived from: [~x4,~x5]
+Assignments so far:
+[x021=0@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3,x5=0@3]
+Current set of clauses:
+[[x6],[~x6]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3,
+x5=0@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3,
+x4=1@3 --[~x4,~x5]--> x5=0@3
+]
+Propagate unit: ~x6 (x6=0@3) derived from: [x021,~x4,~x6]
+Assignments so far:
+[x021=0@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3,x5=0@3,x6=0@3]
+Implication graph:
+[
+x021=0@1,
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3,
+x5=0@3,
+x6=0@3
+]
+[
+x021=0@1 --[x021,~x4,~x6]--> x6=0@3,
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3,
+x4=1@3 --[x021,~x4,~x6]--> x6=0@3,
+x4=1@3 --[~x4,~x5]--> x5=0@3
+]
+Conflict clause: [x5,x6]
+Conflict caused by assignments:
+[x021=0@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3,x5=0@3,x6=0@3]
+Implication graph:
+[
+kappa,
+x021=0@1,
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3,
+x5=0@3,
+x6=0@3
+]
+[
+x021=0@1 --[x021,~x4,~x6]--> x6=0@3,
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3,
+x4=1@3 --[x021,~x4,~x6]--> x6=0@3,
+x4=1@3 --[~x4,~x5]--> x5=0@3,
+x5=0@3 --[x5,x6]--> kappa,
+x6=0@3 --[x5,x6]--> kappa
+]
+Paths from the decision node at this level to kappa:
+x1=0@3 --> x2=0@3 --> x4=1@3 --> x6=0@3 --> kappa
+x1=0@3 --> x2=0@3 --> x4=1@3 --> x5=0@3 --> kappa
+x1=0@3 --> x3=0@3 --> x4=1@3 --> x6=0@3 --> kappa
+x1=0@3 --> x3=0@3 --> x4=1@3 --> x5=0@3 --> kappa
+A dominator is: x4=1@3
+Paths from decision nodes at lower levels to kappa:
+x021=0@1 --> x6=0@3 --> kappa
+Learned clause from dominator: [x021,~x4]
+Not a UIP: two literals [x6,x5] are assigned at level: 3
+Resolvent: of [x5,x6] and antecedent [x021,~x4,~x6] is [x5,x021,~x4]
+Not a UIP: two literals [~x4,x5] are assigned at level: 3
+Resolvent: of [x5,x021,~x4] and antecedent [~x4,~x5] is [x021,~x4]
+UIP: one literal ~x4 is assigned at level: 3
+Learned clause from resolution: [x021,~x4]
+Non-chronological backtracking to level: 1
+Skip decision assignment: x1=1@3
+Skip decision assignment: x031=1@2
+Decision assignment: x021=1@1
+Variables: [x021,x031,x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x021=1@1]
+Current set of clauses:
+[[x1,x031,~x2],[x1,~x3],[x2,x3,x4],[x5,x6],[~x4,~x5]]
+Decision assignment: x031=0@2
+Variables: [x031,x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x021=1@1,x031=0@2]
+Current set of clauses:
+[[x1,~x2],[x1,~x3],[x2,x3,x4],[x5,x6],[~x4,~x5]]
+Decision assignment: x1=0@3
+Variables: [x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x021=1@1,x031=0@2,x1=0@3]
+Current set of clauses:
+[[x2,x3,x4],[x5,x6],[~x2],[~x3],[~x4,~x5]]
+Propagate unit: ~x2 (x2=0@3) derived from: [x1,x031,~x2]
+Assignments so far:
+[x021=1@1,x031=0@2,x1=0@3,x2=0@3]
+Current set of clauses:
+[[x3,x4],[x5,x6],[~x3],[~x4,~x5]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3
+]
+Propagate unit: ~x3 (x3=0@3) derived from: [x1,~x3]
+Assignments so far:
+[x021=1@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3]
+Current set of clauses:
+[[x4],[x5,x6],[~x4,~x5]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3
+]
+Propagate unit:  x4 (x4=1@3) derived from: [x2,x3,x4]
+Assignments so far:
+[x021=1@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3]
+Current set of clauses:
+[[x5,x6],[~x5]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3
+]
+Propagate unit: ~x5 (x5=0@3) derived from: [~x4,~x5]
+Assignments so far:
+[x021=1@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3,x5=0@3]
+Current set of clauses:
+[[x6]]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3,
+x5=0@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3,
+x4=1@3 --[~x4,~x5]--> x5=0@3
+]
+Propagate unit:  x6 (x6=1@3) derived from: [x5,x6]
+Assignments so far:
+[x021=1@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3,x5=0@3,x6=1@3]
+Implication graph:
+[
+x031=0@2,
+x1=0@3,
+x2=0@3,
+x3=0@3,
+x4=1@3,
+x5=0@3,
+x6=1@3
+]
+[
+x031=0@2 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,x031,~x2]--> x2=0@3,
+x1=0@3 --[x1,~x3]--> x3=0@3,
+x2=0@3 --[x2,x3,x4]--> x4=1@3,
+x3=0@3 --[x2,x3,x4]--> x4=1@3,
+x4=1@3 --[~x4,~x5]--> x5=0@3,
+x5=0@3 --[x5,x6]--> x6=1@3
+]
+Satisfying assignments:
+[x021=1@1,x031=0@2,x1=0@3,x2=0@3,x3=0@3,x4=1@3,x5=0@3,x6=1@3]
+Statistics: clauses=6, variables=8, units=10, decisions=6, conflicts=1, learned clauses=1
+
+******************************************
+*            Example from MZ             *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[x1,x4],[x1,x8,x12],[x1,~x3,~x8],[x2,x11],[x7,x10,~x12],[x7,x8,~x10],[~x7,x8,~x9],[~x7,~x3,x9]]
+Decision assignment: x1=0@1
+Variables: [x1,x3,x2,x7,x4,x8,x9,x10,x11,x12]
+Assignments so far:
+[x1=0@1]
+Current set of clauses:
+[[x2,x11],[x4],[x7,x10,~x12],[x7,x8,~x10],[x8,x12],[~x3,~x8],[~x7,x8,~x9],[~x7,~x3,x9]]
+Propagate unit:  x4 (x4=1@1) derived from: [x1,x4]
+Assignments so far:
+[x1=0@1,x4=1@1]
+Current set of clauses:
+[[x2,x11],[x7,x10,~x12],[x7,x8,~x10],[x8,x12],[~x3,~x8],[~x7,x8,~x9],[~x7,~x3,x9]]
+Implication graph:
+[
+x1=0@1,
+x4=1@1
+]
+[
+x1=0@1 --[x1,x4]--> x4=1@1
+]
+Decision assignment: x3=0@2
+Variables: [x3,x2,x7,x8,x9,x10,x11,x12]
+Assignments so far:
+[x1=0@1,x3=0@2,x4=1@1]
+Current set of clauses:
+[[x2,x11],[x7,x10,~x12],[x7,x8,~x10],[x8,x12],[~x7,x8,~x9]]
+Decision assignment: x2=0@3
+Variables: [x2,x7,x8,x9,x10,x11,x12]
+Assignments so far:
+[x1=0@1,x2=0@3,x3=0@2,x4=1@1]
+Current set of clauses:
+[[x11],[x7,x10,~x12],[x7,x8,~x10],[x8,x12],[~x7,x8,~x9]]
+Propagate unit:  x11 (x11=1@3) derived from: [x2,x11]
+Assignments so far:
+[x1=0@1,x11=1@3,x2=0@3,x3=0@2,x4=1@1]
+Current set of clauses:
+[[x7,x10,~x12],[x7,x8,~x10],[x8,x12],[~x7,x8,~x9]]
+Implication graph:
+[
+x1=0@1,
+x11=1@3,
+x2=0@3,
+x4=1@1
+]
+[
+x1=0@1 --[x1,x4]--> x4=1@1,
+x2=0@3 --[x2,x11]--> x11=1@3
+]
+Decision assignment: x7=0@4
+Variables: [x7,x8,x9,x10,x12]
+Assignments so far:
+[x1=0@1,x11=1@3,x2=0@3,x3=0@2,x4=1@1,x7=0@4]
+Current set of clauses:
+[[x10,~x12],[x8,x12],[x8,~x10]]
+Decision assignment: x8=0@5
+Variables: [x8,x9,x10,x12]
+Assignments so far:
+[x1=0@1,x11=1@3,x2=0@3,x3=0@2,x4=1@1,x7=0@4,x8=0@5]
+Current set of clauses:
+[[x10,~x12],[x12],[~x10]]
+Propagate unit:  x12 (x12=1@5) derived from: [x1,x8,x12]
+Assignments so far:
+[x1=0@1,x11=1@3,x12=1@5,x2=0@3,x3=0@2,x4=1@1,x7=0@4,x8=0@5]
+Current set of clauses:
+[[x10],[~x10]]
+Implication graph:
+[
+x1=0@1,
+x11=1@3,
+x12=1@5,
+x2=0@3,
+x4=1@1,
+x8=0@5
+]
+[
+x1=0@1 --[x1,x4]--> x4=1@1,
+x1=0@1 --[x1,x8,x12]--> x12=1@5,
+x2=0@3 --[x2,x11]--> x11=1@3,
+x8=0@5 --[x1,x8,x12]--> x12=1@5
+]
+Propagate unit: ~x10 (x10=0@5) derived from: [x7,x8,~x10]
+Assignments so far:
+[x1=0@1,x10=0@5,x11=1@3,x12=1@5,x2=0@3,x3=0@2,x4=1@1,x7=0@4,
+ x8=0@5]
+Implication graph:
+[
+x1=0@1,
+x10=0@5,
+x11=1@3,
+x12=1@5,
+x2=0@3,
+x4=1@1,
+x7=0@4,
+x8=0@5
+]
+[
+x1=0@1 --[x1,x4]--> x4=1@1,
+x1=0@1 --[x1,x8,x12]--> x12=1@5,
+x2=0@3 --[x2,x11]--> x11=1@3,
+x7=0@4 --[x7,x8,~x10]--> x10=0@5,
+x8=0@5 --[x1,x8,x12]--> x12=1@5,
+x8=0@5 --[x7,x8,~x10]--> x10=0@5
+]
+Conflict clause: [x7,x10,~x12]
+Conflict caused by assignments:
+[x1=0@1,x10=0@5,x11=1@3,x12=1@5,x2=0@3,x3=0@2,x4=1@1,x7=0@4,
+ x8=0@5]
+Implication graph:
+[
+kappa,
+x1=0@1,
+x10=0@5,
+x11=1@3,
+x12=1@5,
+x2=0@3,
+x4=1@1,
+x7=0@4,
+x8=0@5
+]
+[
+x1=0@1 --[x1,x4]--> x4=1@1,
+x1=0@1 --[x1,x8,x12]--> x12=1@5,
+x10=0@5 --[x7,x10,~x12]--> kappa,
+x12=1@5 --[x7,x10,~x12]--> kappa,
+x2=0@3 --[x2,x11]--> x11=1@3,
+x7=0@4 --[x7,x10,~x12]--> kappa,
+x7=0@4 --[x7,x8,~x10]--> x10=0@5,
+x8=0@5 --[x1,x8,x12]--> x12=1@5,
+x8=0@5 --[x7,x8,~x10]--> x10=0@5
+]
+Paths from the decision node at this level to kappa:
+x8=0@5 --> x12=1@5 --> kappa
+x8=0@5 --> x10=0@5 --> kappa
+A dominator is: x8=0@5
+Paths from decision nodes at lower levels to kappa:
+x7=0@4 --> x10=0@5 --> kappa
+x7=0@4 --> kappa
+x1=0@1 --> x12=1@5 --> kappa
+Learned clause from dominator: [x7,x1,x8]
+Not a UIP: two literals [~x12,x10] are assigned at level: 5
+Resolvent: of [x7,x10,~x12] and antecedent [x7,x8,~x10] is [~x12,x7,x8]
+Not a UIP: two literals [x8,~x12] are assigned at level: 5
+Resolvent: of [~x12,x7,x8] and antecedent [x1,x8,x12] is [x7,x1,x8]
+UIP: one literal x8 is assigned at level: 5
+Learned clause from resolution: [x7,x1,x8]
+Decision assignment: x8=1@5
+Variables: [x8,x9,x10,x12]
+Assignments so far:
+[x1=0@1,x11=1@3,x2=0@3,x3=0@2,x4=1@1,x7=0@4,x8=1@5]
+Current set of clauses:
+[[x10,~x12]]
+Decision assignment: x9=0@6
+Variables: [x9,x10,x12]
+Assignments so far:
+[x1=0@1,x11=1@3,x2=0@3,x3=0@2,x4=1@1,x7=0@4,x8=1@5,x9=0@6]
+Current set of clauses:
+[[x10,~x12]]
+Decision assignment: x10=0@7
+Variables: [x10,x12]
+Assignments so far:
+[x1=0@1,x10=0@7,x11=1@3,x2=0@3,x3=0@2,x4=1@1,x7=0@4,x8=1@5,
+ x9=0@6]
+Current set of clauses:
+[[~x12]]
+Propagate unit: ~x12 (x12=0@7) derived from: [x7,x10,~x12]
+Assignments so far:
+[x1=0@1,x10=0@7,x11=1@3,x12=0@7,x2=0@3,x3=0@2,x4=1@1,x7=0@4,
+ x8=1@5,x9=0@6]
+Implication graph:
+[
+x1=0@1,
+x10=0@7,
+x11=1@3,
+x12=0@7,
+x2=0@3,
+x4=1@1,
+x7=0@4
+]
+[
+x1=0@1 --[x1,x4]--> x4=1@1,
+x10=0@7 --[x7,x10,~x12]--> x12=0@7,
+x2=0@3 --[x2,x11]--> x11=1@3,
+x7=0@4 --[x7,x10,~x12]--> x12=0@7
+]
+Satisfying assignments:
+[x1=0@1,x10=0@7,x11=1@3,x12=0@7,x2=0@3,x3=0@2,x4=1@1,x7=0@4,
+ x8=1@5,x9=0@6]
+Statistics: clauses=8, variables=10, units=5, decisions=8, conflicts=1, learned clauses=1
+
+******************************************
+*            Example from MS             *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[x1,x2],[x1,x3,ax9],[~x1,x7,dx12],[~x1,x8],[~x2,~x3,x4],[~x4,x5,bx10],[~x4,x6,cx11],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: ax9=0@1
+Variables: [ax9,bx10,cx11,dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7,dx12],[~x1,x8],[~x2,~x3,x4],[~x4,x5,bx10],[~x4,x6,cx11],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: bx10=0@2
+Variables: [bx10,cx11,dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7,dx12],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x4,x6,cx11],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: cx11=0@3
+Variables: [cx11,dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7,dx12],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x4,x6],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: dx12=0@4
+Variables: [dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x4,x6],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: dx13=0@5
+Variables: [dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x4,x6],[~x5,~x6],[~x7,~x8]]
+Decision assignment: x1=0@6
+Variables: [x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6]
+Current set of clauses:
+[[x2],[x3],[~x2,~x3,x4],[~x4,x5],[~x4,x6],[~x5,~x6],[~x7,~x8]]
+Propagate unit:  x2 (x2=1@6) derived from: [x1,x2]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6]
+Current set of clauses:
+[[x3],[~x3,x4],[~x4,x5],[~x4,x6],[~x5,~x6],[~x7,~x8]]
+Implication graph:
+[
+x1=0@6,
+x2=1@6
+]
+[
+x1=0@6 --[x1,x2]--> x2=1@6
+]
+Propagate unit:  x3 (x3=1@6) derived from: [x1,x3,ax9]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6]
+Current set of clauses:
+[[x4],[~x4,x5],[~x4,x6],[~x5,~x6],[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+x1=0@6,
+x2=1@6,
+x3=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6
+]
+Propagate unit:  x4 (x4=1@6) derived from: [~x2,~x3,x4]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6]
+Current set of clauses:
+[[x5],[x6],[~x5,~x6],[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6
+]
+Propagate unit:  x5 (x5=1@6) derived from: [~x4,x5,bx10]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6]
+Current set of clauses:
+[[x6],[~x6],[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+bx10=0@2,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6,
+x5=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+bx10=0@2 --[~x4,x5,bx10]--> x5=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x4=1@6 --[~x4,x5,bx10]--> x5=1@6
+]
+Propagate unit:  x6 (x6=1@6) derived from: [~x4,x6,cx11]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6,x6=1@6]
+Implication graph:
+[
+ax9=0@1,
+bx10=0@2,
+cx11=0@3,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6,
+x5=1@6,
+x6=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+bx10=0@2 --[~x4,x5,bx10]--> x5=1@6,
+cx11=0@3 --[~x4,x6,cx11]--> x6=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x4=1@6 --[~x4,x5,bx10]--> x5=1@6,
+x4=1@6 --[~x4,x6,cx11]--> x6=1@6
+]
+Conflict clause: [~x5,~x6]
+Conflict caused by assignments:
+[ax9=0@1,bx10=0@2,cx11=0@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6,x6=1@6]
+Implication graph:
+[
+kappa,
+ax9=0@1,
+bx10=0@2,
+cx11=0@3,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6,
+x5=1@6,
+x6=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+bx10=0@2 --[~x4,x5,bx10]--> x5=1@6,
+cx11=0@3 --[~x4,x6,cx11]--> x6=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x4=1@6 --[~x4,x5,bx10]--> x5=1@6,
+x4=1@6 --[~x4,x6,cx11]--> x6=1@6,
+x5=1@6 --[~x5,~x6]--> kappa,
+x6=1@6 --[~x5,~x6]--> kappa
+]
+Paths from the decision node at this level to kappa:
+x1=0@6 --> x2=1@6 --> x4=1@6 --> x5=1@6 --> kappa
+x1=0@6 --> x2=1@6 --> x4=1@6 --> x6=1@6 --> kappa
+x1=0@6 --> x3=1@6 --> x4=1@6 --> x5=1@6 --> kappa
+x1=0@6 --> x3=1@6 --> x4=1@6 --> x6=1@6 --> kappa
+A dominator is: x4=1@6
+Paths from decision nodes at lower levels to kappa:
+cx11=0@3 --> x6=1@6 --> kappa
+bx10=0@2 --> x5=1@6 --> kappa
+Learned clause from dominator: [cx11,bx10,~x4]
+Not a UIP: two literals [~x6,~x5] are assigned at level: 6
+Resolvent: of [~x5,~x6] and antecedent [~x4,x6,cx11] is [~x5,~x4,cx11]
+Not a UIP: two literals [~x4,~x5] are assigned at level: 6
+Resolvent: of [~x5,~x4,cx11] and antecedent [~x4,x5,bx10] is [cx11,~x4,bx10]
+UIP: one literal ~x4 is assigned at level: 6
+Learned clause from resolution: [cx11,~x4,bx10]
+Non-chronological backtracking to level: 3
+Skip decision assignment: x1=1@6
+Skip decision assignment: dx13=1@5
+Skip decision assignment: dx12=1@4
+Decision assignment: cx11=1@3
+Variables: [cx11,dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7,dx12],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: dx12=0@4
+Variables: [dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x5,~x6],[~x7,~x8,dx13]]
+Decision assignment: dx13=0@5
+Variables: [dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5]
+Current set of clauses:
+[[x1,x2],[x1,x3],[~x1,x7],[~x1,x8],[~x2,~x3,x4],[~x4,x5],[~x5,~x6],[~x7,~x8]]
+Decision assignment: x1=0@6
+Variables: [x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6]
+Current set of clauses:
+[[x2],[x3],[~x2,~x3,x4],[~x4,x5],[~x5,~x6],[~x7,~x8]]
+Propagate unit:  x2 (x2=1@6) derived from: [x1,x2]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6]
+Current set of clauses:
+[[x3],[~x3,x4],[~x4,x5],[~x5,~x6],[~x7,~x8]]
+Implication graph:
+[
+x1=0@6,
+x2=1@6
+]
+[
+x1=0@6 --[x1,x2]--> x2=1@6
+]
+Propagate unit:  x3 (x3=1@6) derived from: [x1,x3,ax9]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6]
+Current set of clauses:
+[[x4],[~x4,x5],[~x5,~x6],[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+x1=0@6,
+x2=1@6,
+x3=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6
+]
+Propagate unit:  x4 (x4=1@6) derived from: [~x2,~x3,x4]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6]
+Current set of clauses:
+[[x5],[~x5,~x6],[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6
+]
+Propagate unit:  x5 (x5=1@6) derived from: [~x4,x5,bx10]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6]
+Current set of clauses:
+[[~x6],[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+bx10=0@2,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6,
+x5=1@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+bx10=0@2 --[~x4,x5,bx10]--> x5=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x4=1@6 --[~x4,x5,bx10]--> x5=1@6
+]
+Propagate unit: ~x6 (x6=0@6) derived from: [~x5,~x6]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6,x6=0@6]
+Current set of clauses:
+[[~x7,~x8]]
+Implication graph:
+[
+ax9=0@1,
+bx10=0@2,
+x1=0@6,
+x2=1@6,
+x3=1@6,
+x4=1@6,
+x5=1@6,
+x6=0@6
+]
+[
+ax9=0@1 --[x1,x3,ax9]--> x3=1@6,
+bx10=0@2 --[~x4,x5,bx10]--> x5=1@6,
+x1=0@6 --[x1,x2]--> x2=1@6,
+x1=0@6 --[x1,x3,ax9]--> x3=1@6,
+x2=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x3=1@6 --[~x2,~x3,x4]--> x4=1@6,
+x4=1@6 --[~x4,x5,bx10]--> x5=1@6,
+x5=1@6 --[~x5,~x6]--> x6=0@6
+]
+Decision assignment: x7=0@7
+Variables: [x7,x8]
+Assignments so far:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6,x6=0@6,x7=0@7]
+Satisfying assignments:
+[ax9=0@1,bx10=0@2,cx11=1@3,dx12=0@4,dx13=0@5,x1=0@6,x2=1@6,x3=1@6,
+ x4=1@6,x5=1@6,x6=0@6,x7=0@7]
+Statistics: clauses=9, variables=13, units=10, decisions=11, conflicts=1, learned clauses=1
+
+******************************************
+*              Pigeonhole 2              *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p11,p12],[p21,p22],[p31,p32],[~p11,~p21],[~p11,~p31],[~p12,~p22],[~p12,~p32],[~p21,~p31],[~p22,~p32]]
+Decision assignment: p11=0@1
+Variables: [p11,p12,p21,p22,p31,p32]
+Assignments so far:
+[p11=0@1]
+Current set of clauses:
+[[p12],[p21,p22],[p31,p32],[~p12,~p22],[~p12,~p32],[~p21,~p31],[~p22,~p32]]
+Propagate unit:  p12 (p12=1@1) derived from: [p11,p12]
+Assignments so far:
+[p11=0@1,p12=1@1]
+Current set of clauses:
+[[p21,p22],[p31,p32],[~p21,~p31],[~p22],[~p22,~p32],[~p32]]
+Implication graph:
+[
+p11=0@1,
+p12=1@1
+]
+[
+p11=0@1 --[p11,p12]--> p12=1@1
+]
+Propagate unit: ~p22 (p22=0@1) derived from: [~p12,~p22]
+Assignments so far:
+[p11=0@1,p12=1@1,p22=0@1]
+Current set of clauses:
+[[p21],[p31,p32],[~p21,~p31],[~p32]]
+Implication graph:
+[
+p11=0@1,
+p12=1@1,
+p22=0@1
+]
+[
+p11=0@1 --[p11,p12]--> p12=1@1,
+p12=1@1 --[~p12,~p22]--> p22=0@1
+]
+Propagate unit:  p21 (p21=1@1) derived from: [p21,p22]
+Assignments so far:
+[p11=0@1,p12=1@1,p21=1@1,p22=0@1]
+Current set of clauses:
+[[p31,p32],[~p31],[~p32]]
+Implication graph:
+[
+p11=0@1,
+p12=1@1,
+p21=1@1,
+p22=0@1
+]
+[
+p11=0@1 --[p11,p12]--> p12=1@1,
+p12=1@1 --[~p12,~p22]--> p22=0@1,
+p22=0@1 --[p21,p22]--> p21=1@1
+]
+Propagate unit: ~p31 (p31=0@1) derived from: [~p21,~p31]
+Assignments so far:
+[p11=0@1,p12=1@1,p21=1@1,p22=0@1,p31=0@1]
+Current set of clauses:
+[[p32],[~p32]]
+Implication graph:
+[
+p11=0@1,
+p12=1@1,
+p21=1@1,
+p22=0@1,
+p31=0@1
+]
+[
+p11=0@1 --[p11,p12]--> p12=1@1,
+p12=1@1 --[~p12,~p22]--> p22=0@1,
+p21=1@1 --[~p21,~p31]--> p31=0@1,
+p22=0@1 --[p21,p22]--> p21=1@1
+]
+Propagate unit:  p32 (p32=1@1) derived from: [p31,p32]
+Assignments so far:
+[p11=0@1,p12=1@1,p21=1@1,p22=0@1,p31=0@1,p32=1@1]
+Implication graph:
+[
+p11=0@1,
+p12=1@1,
+p21=1@1,
+p22=0@1,
+p31=0@1,
+p32=1@1
+]
+[
+p11=0@1 --[p11,p12]--> p12=1@1,
+p12=1@1 --[~p12,~p22]--> p22=0@1,
+p21=1@1 --[~p21,~p31]--> p31=0@1,
+p22=0@1 --[p21,p22]--> p21=1@1,
+p31=0@1 --[p31,p32]--> p32=1@1
+]
+Conflict clause: [~p12,~p32]
+Conflict caused by assignments:
+[p11=0@1,p12=1@1,p21=1@1,p22=0@1,p31=0@1,p32=1@1]
+Implication graph:
+[
+kappa,
+p11=0@1,
+p12=1@1,
+p21=1@1,
+p22=0@1,
+p31=0@1,
+p32=1@1
+]
+[
+p11=0@1 --[p11,p12]--> p12=1@1,
+p12=1@1 --[~p12,~p22]--> p22=0@1,
+p12=1@1 --[~p12,~p32]--> kappa,
+p21=1@1 --[~p21,~p31]--> p31=0@1,
+p22=0@1 --[p21,p22]--> p21=1@1,
+p31=0@1 --[p31,p32]--> p32=1@1,
+p32=1@1 --[~p12,~p32]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p11=0@1 --> p12=1@1 --> p22=0@1 --> p21=1@1 --> p31=0@1 --> p32=1@1 --> kappa
+p11=0@1 --> p12=1@1 --> kappa
+A dominator is: p12=1@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [~p12]
+Not a UIP: two literals [~p32,~p12] are assigned at level: 1
+Resolvent: of [~p12,~p32] and antecedent [p31,p32] is [~p12,p31]
+Not a UIP: two literals [p31,~p12] are assigned at level: 1
+Resolvent: of [~p12,p31] and antecedent [~p21,~p31] is [~p12,~p21]
+Not a UIP: two literals [~p21,~p12] are assigned at level: 1
+Resolvent: of [~p12,~p21] and antecedent [p21,p22] is [~p12,p22]
+Not a UIP: two literals [p22,~p12] are assigned at level: 1
+Resolvent: of [~p12,p22] and antecedent [~p12,~p22] is [~p12]
+UIP: one literal ~p12 is assigned at level: 1
+Learned clause from resolution: [~p12]
+Non-chronological backtracking to level: 0
+Decision assignment: p11=1@1
+Variables: [p11,p12,p21,p22,p31,p32]
+Assignments so far:
+[p11=1@1]
+Current set of clauses:
+[[p21,p22],[p31,p32],[~p12],[~p12,~p22],[~p12,~p32],[~p21],[~p21,~p31],[~p22,~p32],[~p31]]
+Propagate unit: ~p21 (p21=0@1) derived from: [~p11,~p21]
+Assignments so far:
+[p11=1@1,p21=0@1]
+Current set of clauses:
+[[p22],[p31,p32],[~p12],[~p12,~p22],[~p12,~p32],[~p22,~p32],[~p31]]
+Implication graph:
+[
+p11=1@1,
+p21=0@1
+]
+[
+p11=1@1 --[~p11,~p21]--> p21=0@1
+]
+Propagate unit:  p22 (p22=1@1) derived from: [p21,p22]
+Assignments so far:
+[p11=1@1,p21=0@1,p22=1@1]
+Current set of clauses:
+[[p31,p32],[~p12],[~p12,~p32],[~p31],[~p32]]
+Implication graph:
+[
+p11=1@1,
+p21=0@1,
+p22=1@1
+]
+[
+p11=1@1 --[~p11,~p21]--> p21=0@1,
+p21=0@1 --[p21,p22]--> p22=1@1
+]
+Propagate unit: ~p31 (p31=0@1) derived from: [~p11,~p31]
+Assignments so far:
+[p11=1@1,p21=0@1,p22=1@1,p31=0@1]
+Current set of clauses:
+[[p32],[~p12],[~p12,~p32],[~p32]]
+Implication graph:
+[
+p11=1@1,
+p21=0@1,
+p22=1@1,
+p31=0@1
+]
+[
+p11=1@1 --[~p11,~p21]--> p21=0@1,
+p11=1@1 --[~p11,~p31]--> p31=0@1,
+p21=0@1 --[p21,p22]--> p22=1@1
+]
+Propagate unit:  p32 (p32=1@1) derived from: [p31,p32]
+Assignments so far:
+[p11=1@1,p21=0@1,p22=1@1,p31=0@1,p32=1@1]
+Implication graph:
+[
+p11=1@1,
+p21=0@1,
+p22=1@1,
+p31=0@1,
+p32=1@1
+]
+[
+p11=1@1 --[~p11,~p21]--> p21=0@1,
+p11=1@1 --[~p11,~p31]--> p31=0@1,
+p21=0@1 --[p21,p22]--> p22=1@1,
+p31=0@1 --[p31,p32]--> p32=1@1
+]
+Conflict clause: [~p22,~p32]
+Conflict caused by assignments:
+[p11=1@1,p21=0@1,p22=1@1,p31=0@1,p32=1@1]
+Implication graph:
+[
+kappa,
+p11=1@1,
+p21=0@1,
+p22=1@1,
+p31=0@1,
+p32=1@1
+]
+[
+p11=1@1 --[~p11,~p21]--> p21=0@1,
+p11=1@1 --[~p11,~p31]--> p31=0@1,
+p21=0@1 --[p21,p22]--> p22=1@1,
+p22=1@1 --[~p22,~p32]--> kappa,
+p31=0@1 --[p31,p32]--> p32=1@1,
+p32=1@1 --[~p22,~p32]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p11=1@1 --> p21=0@1 --> p22=1@1 --> kappa
+p11=1@1 --> p31=0@1 --> p32=1@1 --> kappa
+A dominator is: p11=1@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [~p11]
+Not a UIP: two literals [~p32,~p22] are assigned at level: 1
+Resolvent: of [~p22,~p32] and antecedent [p31,p32] is [~p22,p31]
+Not a UIP: two literals [p31,~p22] are assigned at level: 1
+Resolvent: of [~p22,p31] and antecedent [~p11,~p31] is [~p22,~p11]
+Not a UIP: two literals [~p11,~p22] are assigned at level: 1
+Resolvent: of [~p22,~p11] and antecedent [p21,p22] is [~p11,p21]
+Not a UIP: two literals [p21,~p11] are assigned at level: 1
+Resolvent: of [~p11,p21] and antecedent [~p11,~p21] is [~p11]
+UIP: one literal ~p11 is assigned at level: 1
+Learned clause from resolution: [~p11]
+Unsatisfiable:
+Statistics: clauses=9, variables=6, units=9, decisions=2, conflicts=2, learned clauses=2
+
+******************************************
+*                Queens 4                *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p11,p12,p13,p14],[p21,p22,p23,p24],[p31,p32,p33,p34],[p41,p42,p43,p44],[~p11,~p12],[~p11,~p13],[~p11,~p14],[~p11,~p21],[~p11,~p22],[~p11,~p31],[~p11,~p33],[~p11,~p41],[~p11,~p44],[~p12,~p13],[~p12,~p14],[~p12,~p21],[~p12,~p22],[~p12,~p23],[~p12,~p32],[~p12,~p34],[~p12,~p42],[~p13,~p14],[~p13,~p22],[~p13,~p23],[~p13,~p24],[~p13,~p31],[~p13,~p33],[~p13,~p43],[~p14,~p23],[~p14,~p24],[~p14,~p32],[~p14,~p34],[~p14,~p41],[~p14,~p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44]]
+Decision assignment: p11=0@1
+Variables: [p11,p12,p13,p14,p21,p22,p23,p24,p31,p32,p33,p34,p41,p42,p43,p44]
+Assignments so far:
+[p11=0@1]
+Current set of clauses:
+[[p12,p13,p14],[p21,p22,p23,p24],[p31,p32,p33,p34],[p41,p42,p43,p44],[~p12,~p13],[~p12,~p14],[~p12,~p21],[~p12,~p22],[~p12,~p23],[~p12,~p32],[~p12,~p34],[~p12,~p42],[~p13,~p14],[~p13,~p22],[~p13,~p23],[~p13,~p24],[~p13,~p31],[~p13,~p33],[~p13,~p43],[~p14,~p23],[~p14,~p24],[~p14,~p32],[~p14,~p34],[~p14,~p41],[~p14,~p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44]]
+Decision assignment: p12=0@2
+Variables: [p12,p13,p14,p21,p22,p23,p24,p31,p32,p33,p34,p41,p42,p43,p44]
+Assignments so far:
+[p11=0@1,p12=0@2]
+Current set of clauses:
+[[p13,p14],[p21,p22,p23,p24],[p31,p32,p33,p34],[p41,p42,p43,p44],[~p13,~p14],[~p13,~p22],[~p13,~p23],[~p13,~p24],[~p13,~p31],[~p13,~p33],[~p13,~p43],[~p14,~p23],[~p14,~p24],[~p14,~p32],[~p14,~p34],[~p14,~p41],[~p14,~p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44]]
+Decision assignment: p13=0@3
+Variables: [p13,p14,p21,p22,p23,p24,p31,p32,p33,p34,p41,p42,p43,p44]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3]
+Current set of clauses:
+[[p14],[p21,p22,p23,p24],[p31,p32,p33,p34],[p41,p42,p43,p44],[~p14,~p23],[~p14,~p24],[~p14,~p32],[~p14,~p34],[~p14,~p41],[~p14,~p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44]]
+Propagate unit:  p14 (p14=1@3) derived from: [p11,p12,p13,p14]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3]
+Current set of clauses:
+[[p21,p22,p23,p24],[p31,p32,p33,p34],[p41,p42,p43,p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34],[~p34,~p43],[~p34,~p44],[~p41],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44],[~p44]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3
+]
+Propagate unit: ~p24 (p24=0@3) derived from: [~p14,~p24]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p24=0@3]
+Current set of clauses:
+[[p21,p22,p23],[p31,p32,p33,p34],[p41,p42,p43,p44],[~p21,~p22],[~p21,~p23],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34],[~p34,~p43],[~p34,~p44],[~p41],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44],[~p44]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p24=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3
+]
+Propagate unit: ~p34 (p34=0@3) derived from: [~p14,~p34]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p24=0@3,p34=0@3]
+Current set of clauses:
+[[p21,p22,p23],[p31,p32,p33],[p41,p42,p43,p44],[~p21,~p22],[~p21,~p23],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23],[~p23,~p32],[~p23,~p33],[~p23,~p41],[~p23,~p43],[~p31,~p32],[~p31,~p33],[~p31,~p41],[~p31,~p42],[~p32],[~p32,~p33],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p41],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43,~p44],[~p44]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p24=0@3,
+p34=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3
+]
+Propagate unit: ~p44 (p44=0@3) derived from: [~p14,~p44]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p24=0@3,p34=0@3,p44=0@3]
+Current set of clauses:
+[[p21,p22,p23],[p31,p32,p33],[p41,p42,p43],[~p21,~p22],[~p21,~p23],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p23],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p23],[~p23,~p32],[~p23,~p33],[~p23,~p41],[~p23,~p43],[~p31,~p32],[~p31,~p33],[~p31,~p41],[~p31,~p42],[~p32],[~p32,~p33],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p42],[~p33,~p43],[~p41],[~p41,~p42],[~p41,~p43],[~p42,~p43]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p24=0@3,
+p34=0@3,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3
+]
+Propagate unit: ~p23 (p23=0@3) derived from: [~p14,~p23]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p23=0@3,p24=0@3,p34=0@3,p44=0@3]
+Current set of clauses:
+[[p21,p22],[p31,p32,p33],[p41,p42,p43],[~p21,~p22],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p31,~p32],[~p31,~p33],[~p31,~p41],[~p31,~p42],[~p32],[~p32,~p33],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33,~p42],[~p33,~p43],[~p41],[~p41,~p42],[~p41,~p43],[~p42,~p43]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p23=0@3,
+p24=0@3,
+p34=0@3,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3
+]
+Propagate unit: ~p32 (p32=0@3) derived from: [~p14,~p32]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p23=0@3,p24=0@3,p32=0@3,p34=0@3,
+ p44=0@3]
+Current set of clauses:
+[[p21,p22],[p31,p33],[p41,p42,p43],[~p21,~p22],[~p21,~p31],[~p21,~p41],[~p21,~p43],[~p22,~p31],[~p22,~p33],[~p22,~p42],[~p31,~p33],[~p31,~p41],[~p31,~p42],[~p33,~p42],[~p33,~p43],[~p41],[~p41,~p42],[~p41,~p43],[~p42,~p43]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p23=0@3,
+p24=0@3,
+p32=0@3,
+p34=0@3,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3
+]
+Propagate unit: ~p41 (p41=0@3) derived from: [~p14,~p41]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p23=0@3,p24=0@3,p32=0@3,p34=0@3,
+ p41=0@3,p44=0@3]
+Current set of clauses:
+[[p21,p22],[p31,p33],[p42,p43],[~p21,~p22],[~p21,~p31],[~p21,~p43],[~p22,~p31],[~p22,~p33],[~p22,~p42],[~p31,~p33],[~p31,~p42],[~p33,~p42],[~p33,~p43],[~p42,~p43]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p23=0@3,
+p24=0@3,
+p32=0@3,
+p34=0@3,
+p41=0@3,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3
+]
+Decision assignment: p21=0@4
+Variables: [p21,p22,p31,p33,p42,p43]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p23=0@3,p24=0@3,p32=0@3,
+ p34=0@3,p41=0@3,p44=0@3]
+Current set of clauses:
+[[p22],[p31,p33],[p42,p43],[~p22,~p31],[~p22,~p33],[~p22,~p42],[~p31,~p33],[~p31,~p42],[~p33,~p42],[~p33,~p43],[~p42,~p43]]
+Propagate unit:  p22 (p22=1@4) derived from: [p21,p22,p23,p24]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p22=1@4,p23=0@3,p24=0@3,
+ p32=0@3,p34=0@3,p41=0@3,p44=0@3]
+Current set of clauses:
+[[p31,p33],[p42,p43],[~p31],[~p31,~p33],[~p31,~p42],[~p33],[~p33,~p42],[~p33,~p43],[~p42],[~p42,~p43]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p21=0@4,
+p22=1@4,
+p23=0@3,
+p24=0@3,
+p32=0@3,
+p34=0@3,
+p41=0@3,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3,
+p21=0@4 --[p21,p22,p23,p24]--> p22=1@4,
+p23=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p24=0@3 --[p21,p22,p23,p24]--> p22=1@4
+]
+Propagate unit: ~p42 (p42=0@4) derived from: [~p22,~p42]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p22=1@4,p23=0@3,p24=0@3,
+ p32=0@3,p34=0@3,p41=0@3,p42=0@4,p44=0@3]
+Current set of clauses:
+[[p31,p33],[p43],[~p31],[~p31,~p33],[~p33],[~p33,~p43]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p21=0@4,
+p22=1@4,
+p23=0@3,
+p24=0@3,
+p32=0@3,
+p34=0@3,
+p41=0@3,
+p42=0@4,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3,
+p21=0@4 --[p21,p22,p23,p24]--> p22=1@4,
+p22=1@4 --[~p22,~p42]--> p42=0@4,
+p23=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p24=0@3 --[p21,p22,p23,p24]--> p22=1@4
+]
+Propagate unit:  p43 (p43=1@4) derived from: [p41,p42,p43,p44]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p22=1@4,p23=0@3,p24=0@3,
+ p32=0@3,p34=0@3,p41=0@3,p42=0@4,p43=1@4,p44=0@3]
+Current set of clauses:
+[[p31,p33],[~p31],[~p31,~p33],[~p33]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p21=0@4,
+p22=1@4,
+p23=0@3,
+p24=0@3,
+p32=0@3,
+p34=0@3,
+p41=0@3,
+p42=0@4,
+p43=1@4,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3,
+p21=0@4 --[p21,p22,p23,p24]--> p22=1@4,
+p22=1@4 --[~p22,~p42]--> p42=0@4,
+p23=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p24=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p41=0@3 --[p41,p42,p43,p44]--> p43=1@4,
+p42=0@4 --[p41,p42,p43,p44]--> p43=1@4,
+p44=0@3 --[p41,p42,p43,p44]--> p43=1@4
+]
+Propagate unit: ~p33 (p33=0@4) derived from: [~p33,~p43]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p22=1@4,p23=0@3,p24=0@3,
+ p32=0@3,p33=0@4,p34=0@3,p41=0@3,p42=0@4,p43=1@4,p44=0@3]
+Current set of clauses:
+[[p31],[~p31]]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p21=0@4,
+p22=1@4,
+p23=0@3,
+p24=0@3,
+p32=0@3,
+p33=0@4,
+p34=0@3,
+p41=0@3,
+p42=0@4,
+p43=1@4,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3,
+p21=0@4 --[p21,p22,p23,p24]--> p22=1@4,
+p22=1@4 --[~p22,~p42]--> p42=0@4,
+p23=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p24=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p41=0@3 --[p41,p42,p43,p44]--> p43=1@4,
+p42=0@4 --[p41,p42,p43,p44]--> p43=1@4,
+p43=1@4 --[~p33,~p43]--> p33=0@4,
+p44=0@3 --[p41,p42,p43,p44]--> p43=1@4
+]
+Propagate unit:  p31 (p31=1@4) derived from: [p31,p32,p33,p34]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p22=1@4,p23=0@3,p24=0@3,
+ p31=1@4,p32=0@3,p33=0@4,p34=0@3,p41=0@3,p42=0@4,p43=1@4,p44=0@3]
+Implication graph:
+[
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p21=0@4,
+p22=1@4,
+p23=0@3,
+p24=0@3,
+p31=1@4,
+p32=0@3,
+p33=0@4,
+p34=0@3,
+p41=0@3,
+p42=0@4,
+p43=1@4,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3,
+p21=0@4 --[p21,p22,p23,p24]--> p22=1@4,
+p22=1@4 --[~p22,~p42]--> p42=0@4,
+p23=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p24=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p32=0@3 --[p31,p32,p33,p34]--> p31=1@4,
+p33=0@4 --[p31,p32,p33,p34]--> p31=1@4,
+p34=0@3 --[p31,p32,p33,p34]--> p31=1@4,
+p41=0@3 --[p41,p42,p43,p44]--> p43=1@4,
+p42=0@4 --[p41,p42,p43,p44]--> p43=1@4,
+p43=1@4 --[~p33,~p43]--> p33=0@4,
+p44=0@3 --[p41,p42,p43,p44]--> p43=1@4
+]
+Conflict clause: [~p22,~p31]
+Conflict caused by assignments:
+[p11=0@1,p12=0@2,p13=0@3,p14=1@3,p21=0@4,p22=1@4,p23=0@3,p24=0@3,
+ p31=1@4,p32=0@3,p33=0@4,p34=0@3,p41=0@3,p42=0@4,p43=1@4,p44=0@3]
+Implication graph:
+[
+kappa,
+p11=0@1,
+p12=0@2,
+p13=0@3,
+p14=1@3,
+p21=0@4,
+p22=1@4,
+p23=0@3,
+p24=0@3,
+p31=1@4,
+p32=0@3,
+p33=0@4,
+p34=0@3,
+p41=0@3,
+p42=0@4,
+p43=1@4,
+p44=0@3
+]
+[
+p11=0@1 --[p11,p12,p13,p14]--> p14=1@3,
+p12=0@2 --[p11,p12,p13,p14]--> p14=1@3,
+p13=0@3 --[p11,p12,p13,p14]--> p14=1@3,
+p14=1@3 --[~p14,~p23]--> p23=0@3,
+p14=1@3 --[~p14,~p24]--> p24=0@3,
+p14=1@3 --[~p14,~p32]--> p32=0@3,
+p14=1@3 --[~p14,~p34]--> p34=0@3,
+p14=1@3 --[~p14,~p41]--> p41=0@3,
+p14=1@3 --[~p14,~p44]--> p44=0@3,
+p21=0@4 --[p21,p22,p23,p24]--> p22=1@4,
+p22=1@4 --[~p22,~p31]--> kappa,
+p22=1@4 --[~p22,~p42]--> p42=0@4,
+p23=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p24=0@3 --[p21,p22,p23,p24]--> p22=1@4,
+p31=1@4 --[~p22,~p31]--> kappa,
+p32=0@3 --[p31,p32,p33,p34]--> p31=1@4,
+p33=0@4 --[p31,p32,p33,p34]--> p31=1@4,
+p34=0@3 --[p31,p32,p33,p34]--> p31=1@4,
+p41=0@3 --[p41,p42,p43,p44]--> p43=1@4,
+p42=0@4 --[p41,p42,p43,p44]--> p43=1@4,
+p43=1@4 --[~p33,~p43]--> p33=0@4,
+p44=0@3 --[p41,p42,p43,p44]--> p43=1@4
+]
+Paths from the decision node at this level to kappa:
+p21=0@4 --> p22=1@4 --> kappa
+p21=0@4 --> p22=1@4 --> p42=0@4 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+A dominator is: p22=1@4
+Paths from decision nodes at lower levels to kappa:
+p13=0@3 --> p14=1@3 --> p44=0@3 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+p13=0@3 --> p14=1@3 --> p41=0@3 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+p13=0@3 --> p14=1@3 --> p34=0@3 --> p31=1@4 --> kappa
+p13=0@3 --> p14=1@3 --> p32=0@3 --> p31=1@4 --> kappa
+p12=0@2 --> p14=1@3 --> p44=0@3 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+p12=0@2 --> p14=1@3 --> p41=0@3 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+p12=0@2 --> p14=1@3 --> p34=0@3 --> p31=1@4 --> kappa
+p12=0@2 --> p14=1@3 --> p32=0@3 --> p31=1@4 --> kappa
+p11=0@1 --> p14=1@3 --> p44=0@3 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+p11=0@1 --> p14=1@3 --> p41=0@3 --> p43=1@4 --> p33=0@4 --> p31=1@4 --> kappa
+p11=0@1 --> p14=1@3 --> p34=0@3 --> p31=1@4 --> kappa
+p11=0@1 --> p14=1@3 --> p32=0@3 --> p31=1@4 --> kappa
+Learned clause from dominator: [p44,p41,p34,p32,~p22]
+Not a UIP: two literals [~p31,~p22] are assigned at level: 4
+Resolvent: of [~p22,~p31] and antecedent [p31,p32,p33,p34] is [~p22,p32,p33,p34]
+Not a UIP: two literals [p33,~p22] are assigned at level: 4
+Resolvent: of [~p22,p32,p33,p34] and antecedent [~p33,~p43] is [~p22,p32,p34,~p43]
+Not a UIP: two literals [~p43,~p22] are assigned at level: 4
+Resolvent: of [~p22,p32,p34,~p43] and antecedent [p41,p42,p43,p44] is [~p22,p32,p34,p41,p42,p44]
+Not a UIP: two literals [p42,~p22] are assigned at level: 4
+Resolvent: of [~p22,p32,p34,p41,p42,p44] and antecedent [~p22,~p42] is [p32,p34,p41,p44,~p22]
+UIP: one literal ~p22 is assigned at level: 4
+Learned clause from resolution: [p32,p34,p41,p44,~p22]
+Non-chronological backtracking to level: 3
+Skip decision assignment: p21=1@4
+Decision assignment: p13=1@3
+Variables: [p13,p14,p21,p22,p23,p24,p31,p32,p33,p34,p41,p42,p43,p44]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3]
+Current set of clauses:
+[[p21,p22,p23,p24],[p31,p32,p33,p34],[p32,p34,p41,p44,~p22],[p41,p42,p43,p44],[~p14],[~p14,~p23],[~p14,~p24],[~p14,~p32],[~p14,~p34],[~p14,~p41],[~p14,~p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43],[~p43,~p44]]
+Propagate unit: ~p14 (p14=0@3) derived from: [~p13,~p14]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3]
+Current set of clauses:
+[[p21,p22,p23,p24],[p31,p32,p33,p34],[p32,p34,p41,p44,~p22],[p41,p42,p43,p44],[~p21,~p22],[~p21,~p23],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22],[~p22,~p23],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p23],[~p23,~p24],[~p23,~p32],[~p23,~p33],[~p23,~p34],[~p23,~p41],[~p23,~p43],[~p24],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43],[~p43,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3
+]
+Propagate unit: ~p23 (p23=0@3) derived from: [~p13,~p23]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p23=0@3]
+Current set of clauses:
+[[p21,p22,p24],[p31,p32,p33,p34],[p32,p34,p41,p44,~p22],[p41,p42,p43,p44],[~p21,~p22],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p33],[~p22,~p42],[~p22,~p44],[~p24],[~p24,~p33],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31],[~p31,~p32],[~p31,~p33],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p33],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p33],[~p33,~p34],[~p33,~p42],[~p33,~p43],[~p33,~p44],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43],[~p43,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p23=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3
+]
+Propagate unit: ~p33 (p33=0@3) derived from: [~p13,~p33]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p23=0@3,p33=0@3]
+Current set of clauses:
+[[p21,p22,p24],[p31,p32,p34],[p32,p34,p41,p44,~p22],[p41,p42,p43,p44],[~p21,~p22],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p21,~p43],[~p22],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p42],[~p22,~p44],[~p24],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31],[~p31,~p32],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p32,~p43],[~p34,~p43],[~p34,~p44],[~p41,~p42],[~p41,~p43],[~p41,~p44],[~p42,~p43],[~p42,~p44],[~p43],[~p43,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p23=0@3,
+p33=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3
+]
+Propagate unit: ~p43 (p43=0@3) derived from: [~p13,~p43]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p23=0@3,p33=0@3,p43=0@3]
+Current set of clauses:
+[[p21,p22,p24],[p31,p32,p34],[p32,p34,p41,p44,~p22],[p41,p42,p44],[~p21,~p22],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p22],[~p22,~p24],[~p22,~p31],[~p22,~p32],[~p22,~p42],[~p22,~p44],[~p24],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31],[~p31,~p32],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p34,~p44],[~p41,~p42],[~p41,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p23=0@3,
+p33=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3
+]
+Propagate unit: ~p22 (p22=0@3) derived from: [~p13,~p22]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p22=0@3,p23=0@3,p33=0@3,p43=0@3]
+Current set of clauses:
+[[p21,p24],[p31,p32,p34],[p41,p42,p44],[~p21,~p24],[~p21,~p31],[~p21,~p32],[~p21,~p41],[~p24],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p31],[~p31,~p32],[~p31,~p34],[~p31,~p41],[~p31,~p42],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p34,~p44],[~p41,~p42],[~p41,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p22=0@3,
+p23=0@3,
+p33=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3
+]
+Propagate unit: ~p31 (p31=0@3) derived from: [~p13,~p31]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p22=0@3,p23=0@3,p31=0@3,p33=0@3,
+ p43=0@3]
+Current set of clauses:
+[[p21,p24],[p32,p34],[p41,p42,p44],[~p21,~p24],[~p21,~p32],[~p21,~p41],[~p24],[~p24,~p34],[~p24,~p42],[~p24,~p44],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p34,~p44],[~p41,~p42],[~p41,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p22=0@3,
+p23=0@3,
+p31=0@3,
+p33=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3
+]
+Propagate unit: ~p24 (p24=0@3) derived from: [~p13,~p24]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p22=0@3,p23=0@3,p24=0@3,p31=0@3,
+ p33=0@3,p43=0@3]
+Current set of clauses:
+[[p21],[p32,p34],[p41,p42,p44],[~p21,~p32],[~p21,~p41],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p34,~p44],[~p41,~p42],[~p41,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p33=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3
+]
+Propagate unit:  p21 (p21=1@3) derived from: [p21,p22,p23,p24]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p33=0@3,p43=0@3]
+Current set of clauses:
+[[p32,p34],[p41,p42,p44],[~p32],[~p32,~p34],[~p32,~p41],[~p32,~p42],[~p34,~p44],[~p41],[~p41,~p42],[~p41,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p21=1@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p33=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3,
+p22=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p23=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p24=0@3 --[p21,p22,p23,p24]--> p21=1@3
+]
+Propagate unit: ~p41 (p41=0@3) derived from: [~p21,~p41]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p33=0@3,p41=0@3,p43=0@3]
+Current set of clauses:
+[[p32,p34],[p42,p44],[~p32],[~p32,~p34],[~p32,~p42],[~p34,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p21=1@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p33=0@3,
+p41=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3,
+p21=1@3 --[~p21,~p41]--> p41=0@3,
+p22=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p23=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p24=0@3 --[p21,p22,p23,p24]--> p21=1@3
+]
+Propagate unit: ~p32 (p32=0@3) derived from: [~p21,~p32]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p32=0@3,p33=0@3,p41=0@3,p43=0@3]
+Current set of clauses:
+[[p34],[p42,p44],[~p34,~p44],[~p42,~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p21=1@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p32=0@3,
+p33=0@3,
+p41=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3,
+p21=1@3 --[~p21,~p32]--> p32=0@3,
+p21=1@3 --[~p21,~p41]--> p41=0@3,
+p22=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p23=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p24=0@3 --[p21,p22,p23,p24]--> p21=1@3
+]
+Propagate unit:  p34 (p34=1@3) derived from: [p31,p32,p33,p34]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p32=0@3,p33=0@3,p34=1@3,p41=0@3,p43=0@3]
+Current set of clauses:
+[[p42,p44],[~p42,~p44],[~p44]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p21=1@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p32=0@3,
+p33=0@3,
+p34=1@3,
+p41=0@3,
+p43=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3,
+p21=1@3 --[~p21,~p32]--> p32=0@3,
+p21=1@3 --[~p21,~p41]--> p41=0@3,
+p22=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p23=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p24=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p31=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p32=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p33=0@3 --[p31,p32,p33,p34]--> p34=1@3
+]
+Propagate unit: ~p44 (p44=0@3) derived from: [~p34,~p44]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p32=0@3,p33=0@3,p34=1@3,p41=0@3,p43=0@3,p44=0@3]
+Current set of clauses:
+[[p42]]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p21=1@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p32=0@3,
+p33=0@3,
+p34=1@3,
+p41=0@3,
+p43=0@3,
+p44=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3,
+p21=1@3 --[~p21,~p32]--> p32=0@3,
+p21=1@3 --[~p21,~p41]--> p41=0@3,
+p22=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p23=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p24=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p31=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p32=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p33=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p34=1@3 --[~p34,~p44]--> p44=0@3
+]
+Propagate unit:  p42 (p42=1@3) derived from: [p41,p42,p43,p44]
+Assignments so far:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p32=0@3,p33=0@3,p34=1@3,p41=0@3,p42=1@3,p43=0@3,p44=0@3]
+Implication graph:
+[
+p13=1@3,
+p14=0@3,
+p21=1@3,
+p22=0@3,
+p23=0@3,
+p24=0@3,
+p31=0@3,
+p32=0@3,
+p33=0@3,
+p34=1@3,
+p41=0@3,
+p42=1@3,
+p43=0@3,
+p44=0@3
+]
+[
+p13=1@3 --[~p13,~p14]--> p14=0@3,
+p13=1@3 --[~p13,~p22]--> p22=0@3,
+p13=1@3 --[~p13,~p23]--> p23=0@3,
+p13=1@3 --[~p13,~p24]--> p24=0@3,
+p13=1@3 --[~p13,~p31]--> p31=0@3,
+p13=1@3 --[~p13,~p33]--> p33=0@3,
+p13=1@3 --[~p13,~p43]--> p43=0@3,
+p21=1@3 --[~p21,~p32]--> p32=0@3,
+p21=1@3 --[~p21,~p41]--> p41=0@3,
+p22=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p23=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p24=0@3 --[p21,p22,p23,p24]--> p21=1@3,
+p31=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p32=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p33=0@3 --[p31,p32,p33,p34]--> p34=1@3,
+p34=1@3 --[~p34,~p44]--> p44=0@3,
+p41=0@3 --[p41,p42,p43,p44]--> p42=1@3,
+p43=0@3 --[p41,p42,p43,p44]--> p42=1@3,
+p44=0@3 --[p41,p42,p43,p44]--> p42=1@3
+]
+Satisfying assignments:
+[p11=0@1,p12=0@2,p13=1@3,p14=0@3,p21=1@3,p22=0@3,p23=0@3,p24=0@3,
+ p31=0@3,p32=0@3,p33=0@3,p34=1@3,p41=0@3,p42=1@3,p43=0@3,p44=0@3]
+Statistics: clauses=80, variables=16, units=25, decisions=5, conflicts=1, learned clauses=1
+
+******************************************
+*       Tseitin example from MLCS        *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p,r,s],[p,~q],[p,~r,~s],[q,r,~t],[q,~r,t],[s,~t],[~p,q],[~p,r,~s],[~p,~r,s],[~q,r,t],[~q,~r,~t],[~s,t]]
+Decision assignment: p=0@1
+Variables: [p,q,r,s,t]
+Assignments so far:
+[p=0@1]
+Current set of clauses:
+[[q,r,~t],[q,~r,t],[r,s],[s,~t],[~q],[~q,r,t],[~q,~r,~t],[~r,~s],[~s,t]]
+Propagate unit: ~q (q=0@1) derived from: [p,~q]
+Assignments so far:
+[p=0@1,q=0@1]
+Current set of clauses:
+[[r,s],[r,~t],[s,~t],[~r,t],[~r,~s],[~s,t]]
+Implication graph:
+[
+p=0@1,
+q=0@1
+]
+[
+p=0@1 --[p,~q]--> q=0@1
+]
+Decision assignment: r=0@2
+Variables: [r,s,t]
+Assignments so far:
+[p=0@1,q=0@1,r=0@2]
+Current set of clauses:
+[[s],[s,~t],[~s,t],[~t]]
+Propagate unit:  s (s=1@2) derived from: [p,r,s]
+Assignments so far:
+[p=0@1,q=0@1,r=0@2,s=1@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=0@2,
+s=1@2
+]
+[
+p=0@1 --[p,r,s]--> s=1@2,
+p=0@1 --[p,~q]--> q=0@1,
+r=0@2 --[p,r,s]--> s=1@2
+]
+Propagate unit:  t (t=1@2) derived from: [~s,t]
+Assignments so far:
+[p=0@1,q=0@1,r=0@2,s=1@2,t=1@2]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=0@2,
+s=1@2,
+t=1@2
+]
+[
+p=0@1 --[p,r,s]--> s=1@2,
+p=0@1 --[p,~q]--> q=0@1,
+r=0@2 --[p,r,s]--> s=1@2,
+s=1@2 --[~s,t]--> t=1@2
+]
+Conflict clause: [q,r,~t]
+Conflict caused by assignments:
+[p=0@1,q=0@1,r=0@2,s=1@2,t=1@2]
+Implication graph:
+[
+kappa,
+p=0@1,
+q=0@1,
+r=0@2,
+s=1@2,
+t=1@2
+]
+[
+p=0@1 --[p,r,s]--> s=1@2,
+p=0@1 --[p,~q]--> q=0@1,
+q=0@1 --[q,r,~t]--> kappa,
+r=0@2 --[p,r,s]--> s=1@2,
+r=0@2 --[q,r,~t]--> kappa,
+s=1@2 --[~s,t]--> t=1@2,
+t=1@2 --[q,r,~t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=0@2 --> s=1@2 --> t=1@2 --> kappa
+r=0@2 --> kappa
+A dominator is: r=0@2
+Paths from decision nodes at lower levels to kappa:
+p=0@1 --> q=0@1 --> kappa
+p=0@1 --> s=1@2 --> t=1@2 --> kappa
+Learned clause from dominator: [p,r]
+Not a UIP: two literals [~t,r] are assigned at level: 2
+Resolvent: of [q,r,~t] and antecedent [~s,t] is [q,r,~s]
+Not a UIP: two literals [~s,r] are assigned at level: 2
+Resolvent: of [q,r,~s] and antecedent [p,r,s] is [q,p,r]
+UIP: one literal r is assigned at level: 2
+Learned clause from resolution: [q,p,r]
+Decision assignment: r=1@2
+Variables: [r,s,t]
+Assignments so far:
+[p=0@1,q=0@1,r=1@2]
+Current set of clauses:
+[[s,~t],[t],[~s],[~s,t]]
+Propagate unit: ~s (s=0@2) derived from: [p,~r,~s]
+Assignments so far:
+[p=0@1,q=0@1,r=1@2,s=0@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=1@2,
+s=0@2
+]
+[
+p=0@1 --[p,~q]--> q=0@1,
+p=0@1 --[p,~r,~s]--> s=0@2,
+r=1@2 --[p,~r,~s]--> s=0@2
+]
+Propagate unit: ~t (t=0@2) derived from: [s,~t]
+Assignments so far:
+[p=0@1,q=0@1,r=1@2,s=0@2,t=0@2]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=1@2,
+s=0@2,
+t=0@2
+]
+[
+p=0@1 --[p,~q]--> q=0@1,
+p=0@1 --[p,~r,~s]--> s=0@2,
+r=1@2 --[p,~r,~s]--> s=0@2,
+s=0@2 --[s,~t]--> t=0@2
+]
+Conflict clause: [q,~r,t]
+Conflict caused by assignments:
+[p=0@1,q=0@1,r=1@2,s=0@2,t=0@2]
+Implication graph:
+[
+kappa,
+p=0@1,
+q=0@1,
+r=1@2,
+s=0@2,
+t=0@2
+]
+[
+p=0@1 --[p,~q]--> q=0@1,
+p=0@1 --[p,~r,~s]--> s=0@2,
+q=0@1 --[q,~r,t]--> kappa,
+r=1@2 --[p,~r,~s]--> s=0@2,
+r=1@2 --[q,~r,t]--> kappa,
+s=0@2 --[s,~t]--> t=0@2,
+t=0@2 --[q,~r,t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=1@2 --> s=0@2 --> t=0@2 --> kappa
+r=1@2 --> kappa
+A dominator is: r=1@2
+Paths from decision nodes at lower levels to kappa:
+p=0@1 --> s=0@2 --> t=0@2 --> kappa
+p=0@1 --> q=0@1 --> kappa
+Learned clause from dominator: [p,~r]
+Not a UIP: two literals [t,~r] are assigned at level: 2
+Resolvent: of [q,~r,t] and antecedent [s,~t] is [q,~r,s]
+Not a UIP: two literals [s,~r] are assigned at level: 2
+Resolvent: of [q,~r,s] and antecedent [p,~r,~s] is [q,p,~r]
+UIP: one literal ~r is assigned at level: 2
+Learned clause from resolution: [q,p,~r]
+Decision assignment: p=1@1
+Variables: [p,q,r,s,t]
+Assignments so far:
+[p=1@1]
+Current set of clauses:
+[[q],[q,r,~t],[q,~r,t],[r,~s],[s,~t],[~q,r,t],[~q,~r,~t],[~r,s],[~s,t]]
+Propagate unit:  q (q=1@1) derived from: [~p,q]
+Assignments so far:
+[p=1@1,q=1@1]
+Current set of clauses:
+[[r,t],[r,~s],[s,~t],[~r,s],[~r,~t],[~s,t]]
+Implication graph:
+[
+p=1@1,
+q=1@1
+]
+[
+p=1@1 --[~p,q]--> q=1@1
+]
+Decision assignment: r=0@2
+Variables: [r,s,t]
+Assignments so far:
+[p=1@1,q=1@1,r=0@2]
+Current set of clauses:
+[[s,~t],[t],[~s],[~s,t]]
+Propagate unit: ~s (s=0@2) derived from: [~p,r,~s]
+Assignments so far:
+[p=1@1,q=1@1,r=0@2,s=0@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=0@2,
+s=0@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,r,~s]--> s=0@2,
+r=0@2 --[~p,r,~s]--> s=0@2
+]
+Propagate unit: ~t (t=0@2) derived from: [s,~t]
+Assignments so far:
+[p=1@1,q=1@1,r=0@2,s=0@2,t=0@2]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=0@2,
+s=0@2,
+t=0@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,r,~s]--> s=0@2,
+r=0@2 --[~p,r,~s]--> s=0@2,
+s=0@2 --[s,~t]--> t=0@2
+]
+Conflict clause: [~q,r,t]
+Conflict caused by assignments:
+[p=1@1,q=1@1,r=0@2,s=0@2,t=0@2]
+Implication graph:
+[
+kappa,
+p=1@1,
+q=1@1,
+r=0@2,
+s=0@2,
+t=0@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,r,~s]--> s=0@2,
+q=1@1 --[~q,r,t]--> kappa,
+r=0@2 --[~p,r,~s]--> s=0@2,
+r=0@2 --[~q,r,t]--> kappa,
+s=0@2 --[s,~t]--> t=0@2,
+t=0@2 --[~q,r,t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=0@2 --> s=0@2 --> t=0@2 --> kappa
+r=0@2 --> kappa
+A dominator is: r=0@2
+Paths from decision nodes at lower levels to kappa:
+p=1@1 --> s=0@2 --> t=0@2 --> kappa
+p=1@1 --> q=1@1 --> kappa
+Learned clause from dominator: [~p,r]
+Not a UIP: two literals [t,r] are assigned at level: 2
+Resolvent: of [~q,r,t] and antecedent [s,~t] is [~q,r,s]
+Not a UIP: two literals [s,r] are assigned at level: 2
+Resolvent: of [~q,r,s] and antecedent [~p,r,~s] is [~q,~p,r]
+UIP: one literal r is assigned at level: 2
+Learned clause from resolution: [~q,~p,r]
+Decision assignment: r=1@2
+Variables: [r,s,t]
+Assignments so far:
+[p=1@1,q=1@1,r=1@2]
+Current set of clauses:
+[[s],[s,~t],[~s,t],[~t]]
+Propagate unit:  s (s=1@2) derived from: [~p,~r,s]
+Assignments so far:
+[p=1@1,q=1@1,r=1@2,s=1@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=1@2,
+s=1@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,~r,s]--> s=1@2,
+r=1@2 --[~p,~r,s]--> s=1@2
+]
+Propagate unit:  t (t=1@2) derived from: [~s,t]
+Assignments so far:
+[p=1@1,q=1@1,r=1@2,s=1@2,t=1@2]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=1@2,
+s=1@2,
+t=1@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,~r,s]--> s=1@2,
+r=1@2 --[~p,~r,s]--> s=1@2,
+s=1@2 --[~s,t]--> t=1@2
+]
+Conflict clause: [~q,~r,~t]
+Conflict caused by assignments:
+[p=1@1,q=1@1,r=1@2,s=1@2,t=1@2]
+Implication graph:
+[
+kappa,
+p=1@1,
+q=1@1,
+r=1@2,
+s=1@2,
+t=1@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,~r,s]--> s=1@2,
+q=1@1 --[~q,~r,~t]--> kappa,
+r=1@2 --[~p,~r,s]--> s=1@2,
+r=1@2 --[~q,~r,~t]--> kappa,
+s=1@2 --[~s,t]--> t=1@2,
+t=1@2 --[~q,~r,~t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=1@2 --> s=1@2 --> t=1@2 --> kappa
+r=1@2 --> kappa
+A dominator is: r=1@2
+Paths from decision nodes at lower levels to kappa:
+p=1@1 --> s=1@2 --> t=1@2 --> kappa
+p=1@1 --> q=1@1 --> kappa
+Learned clause from dominator: [~p,~r]
+Not a UIP: two literals [~t,~r] are assigned at level: 2
+Resolvent: of [~q,~r,~t] and antecedent [~s,t] is [~q,~r,~s]
+Not a UIP: two literals [~s,~r] are assigned at level: 2
+Resolvent: of [~q,~r,~s] and antecedent [~p,~r,s] is [~q,~p,~r]
+UIP: one literal ~r is assigned at level: 2
+Learned clause from resolution: [~q,~p,~r]
+Unsatisfiable:
+Statistics: clauses=12, variables=5, units=10, decisions=6, conflicts=4, learned clauses=4
+
+******************************************
+*    Tseitin example from MLCS (sat)     *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p,r,s],[p,~q],[p,~r,~s],[q,r,~t],[q,~r,t],[s,~t],[~p,q],[~p,r,~s],[~p,~r,s],[~q,r,t],[~q,~r,t],[~s,t]]
+Decision assignment: p=0@1
+Variables: [p,q,r,s,t]
+Assignments so far:
+[p=0@1]
+Current set of clauses:
+[[q,r,~t],[q,~r,t],[r,s],[s,~t],[~q],[~q,r,t],[~q,~r,t],[~r,~s],[~s,t]]
+Propagate unit: ~q (q=0@1) derived from: [p,~q]
+Assignments so far:
+[p=0@1,q=0@1]
+Current set of clauses:
+[[r,s],[r,~t],[s,~t],[~r,t],[~r,~s],[~s,t]]
+Implication graph:
+[
+p=0@1,
+q=0@1
+]
+[
+p=0@1 --[p,~q]--> q=0@1
+]
+Decision assignment: r=0@2
+Variables: [r,s,t]
+Assignments so far:
+[p=0@1,q=0@1,r=0@2]
+Current set of clauses:
+[[s],[s,~t],[~s,t],[~t]]
+Propagate unit:  s (s=1@2) derived from: [p,r,s]
+Assignments so far:
+[p=0@1,q=0@1,r=0@2,s=1@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=0@2,
+s=1@2
+]
+[
+p=0@1 --[p,r,s]--> s=1@2,
+p=0@1 --[p,~q]--> q=0@1,
+r=0@2 --[p,r,s]--> s=1@2
+]
+Propagate unit:  t (t=1@2) derived from: [~s,t]
+Assignments so far:
+[p=0@1,q=0@1,r=0@2,s=1@2,t=1@2]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=0@2,
+s=1@2,
+t=1@2
+]
+[
+p=0@1 --[p,r,s]--> s=1@2,
+p=0@1 --[p,~q]--> q=0@1,
+r=0@2 --[p,r,s]--> s=1@2,
+s=1@2 --[~s,t]--> t=1@2
+]
+Conflict clause: [q,r,~t]
+Conflict caused by assignments:
+[p=0@1,q=0@1,r=0@2,s=1@2,t=1@2]
+Implication graph:
+[
+kappa,
+p=0@1,
+q=0@1,
+r=0@2,
+s=1@2,
+t=1@2
+]
+[
+p=0@1 --[p,r,s]--> s=1@2,
+p=0@1 --[p,~q]--> q=0@1,
+q=0@1 --[q,r,~t]--> kappa,
+r=0@2 --[p,r,s]--> s=1@2,
+r=0@2 --[q,r,~t]--> kappa,
+s=1@2 --[~s,t]--> t=1@2,
+t=1@2 --[q,r,~t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=0@2 --> s=1@2 --> t=1@2 --> kappa
+r=0@2 --> kappa
+A dominator is: r=0@2
+Paths from decision nodes at lower levels to kappa:
+p=0@1 --> q=0@1 --> kappa
+p=0@1 --> s=1@2 --> t=1@2 --> kappa
+Learned clause from dominator: [p,r]
+Not a UIP: two literals [~t,r] are assigned at level: 2
+Resolvent: of [q,r,~t] and antecedent [~s,t] is [q,r,~s]
+Not a UIP: two literals [~s,r] are assigned at level: 2
+Resolvent: of [q,r,~s] and antecedent [p,r,s] is [q,p,r]
+UIP: one literal r is assigned at level: 2
+Learned clause from resolution: [q,p,r]
+Decision assignment: r=1@2
+Variables: [r,s,t]
+Assignments so far:
+[p=0@1,q=0@1,r=1@2]
+Current set of clauses:
+[[s,~t],[t],[~s],[~s,t]]
+Propagate unit: ~s (s=0@2) derived from: [p,~r,~s]
+Assignments so far:
+[p=0@1,q=0@1,r=1@2,s=0@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=1@2,
+s=0@2
+]
+[
+p=0@1 --[p,~q]--> q=0@1,
+p=0@1 --[p,~r,~s]--> s=0@2,
+r=1@2 --[p,~r,~s]--> s=0@2
+]
+Propagate unit: ~t (t=0@2) derived from: [s,~t]
+Assignments so far:
+[p=0@1,q=0@1,r=1@2,s=0@2,t=0@2]
+Implication graph:
+[
+p=0@1,
+q=0@1,
+r=1@2,
+s=0@2,
+t=0@2
+]
+[
+p=0@1 --[p,~q]--> q=0@1,
+p=0@1 --[p,~r,~s]--> s=0@2,
+r=1@2 --[p,~r,~s]--> s=0@2,
+s=0@2 --[s,~t]--> t=0@2
+]
+Conflict clause: [q,~r,t]
+Conflict caused by assignments:
+[p=0@1,q=0@1,r=1@2,s=0@2,t=0@2]
+Implication graph:
+[
+kappa,
+p=0@1,
+q=0@1,
+r=1@2,
+s=0@2,
+t=0@2
+]
+[
+p=0@1 --[p,~q]--> q=0@1,
+p=0@1 --[p,~r,~s]--> s=0@2,
+q=0@1 --[q,~r,t]--> kappa,
+r=1@2 --[p,~r,~s]--> s=0@2,
+r=1@2 --[q,~r,t]--> kappa,
+s=0@2 --[s,~t]--> t=0@2,
+t=0@2 --[q,~r,t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=1@2 --> s=0@2 --> t=0@2 --> kappa
+r=1@2 --> kappa
+A dominator is: r=1@2
+Paths from decision nodes at lower levels to kappa:
+p=0@1 --> s=0@2 --> t=0@2 --> kappa
+p=0@1 --> q=0@1 --> kappa
+Learned clause from dominator: [p,~r]
+Not a UIP: two literals [t,~r] are assigned at level: 2
+Resolvent: of [q,~r,t] and antecedent [s,~t] is [q,~r,s]
+Not a UIP: two literals [s,~r] are assigned at level: 2
+Resolvent: of [q,~r,s] and antecedent [p,~r,~s] is [q,p,~r]
+UIP: one literal ~r is assigned at level: 2
+Learned clause from resolution: [q,p,~r]
+Decision assignment: p=1@1
+Variables: [p,q,r,s,t]
+Assignments so far:
+[p=1@1]
+Current set of clauses:
+[[q],[q,r,~t],[q,~r,t],[r,~s],[s,~t],[~q,r,t],[~q,~r,t],[~r,s],[~s,t]]
+Propagate unit:  q (q=1@1) derived from: [~p,q]
+Assignments so far:
+[p=1@1,q=1@1]
+Current set of clauses:
+[[r,t],[r,~s],[s,~t],[~r,s],[~r,t],[~s,t]]
+Implication graph:
+[
+p=1@1,
+q=1@1
+]
+[
+p=1@1 --[~p,q]--> q=1@1
+]
+Decision assignment: r=0@2
+Variables: [r,s,t]
+Assignments so far:
+[p=1@1,q=1@1,r=0@2]
+Current set of clauses:
+[[s,~t],[t],[~s],[~s,t]]
+Propagate unit: ~s (s=0@2) derived from: [~p,r,~s]
+Assignments so far:
+[p=1@1,q=1@1,r=0@2,s=0@2]
+Current set of clauses:
+[[t],[~t]]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=0@2,
+s=0@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,r,~s]--> s=0@2,
+r=0@2 --[~p,r,~s]--> s=0@2
+]
+Propagate unit: ~t (t=0@2) derived from: [s,~t]
+Assignments so far:
+[p=1@1,q=1@1,r=0@2,s=0@2,t=0@2]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=0@2,
+s=0@2,
+t=0@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,r,~s]--> s=0@2,
+r=0@2 --[~p,r,~s]--> s=0@2,
+s=0@2 --[s,~t]--> t=0@2
+]
+Conflict clause: [~q,r,t]
+Conflict caused by assignments:
+[p=1@1,q=1@1,r=0@2,s=0@2,t=0@2]
+Implication graph:
+[
+kappa,
+p=1@1,
+q=1@1,
+r=0@2,
+s=0@2,
+t=0@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,r,~s]--> s=0@2,
+q=1@1 --[~q,r,t]--> kappa,
+r=0@2 --[~p,r,~s]--> s=0@2,
+r=0@2 --[~q,r,t]--> kappa,
+s=0@2 --[s,~t]--> t=0@2,
+t=0@2 --[~q,r,t]--> kappa
+]
+Paths from the decision node at this level to kappa:
+r=0@2 --> s=0@2 --> t=0@2 --> kappa
+r=0@2 --> kappa
+A dominator is: r=0@2
+Paths from decision nodes at lower levels to kappa:
+p=1@1 --> s=0@2 --> t=0@2 --> kappa
+p=1@1 --> q=1@1 --> kappa
+Learned clause from dominator: [~p,r]
+Not a UIP: two literals [t,r] are assigned at level: 2
+Resolvent: of [~q,r,t] and antecedent [s,~t] is [~q,r,s]
+Not a UIP: two literals [s,r] are assigned at level: 2
+Resolvent: of [~q,r,s] and antecedent [~p,r,~s] is [~q,~p,r]
+UIP: one literal r is assigned at level: 2
+Learned clause from resolution: [~q,~p,r]
+Decision assignment: r=1@2
+Variables: [r,s,t]
+Assignments so far:
+[p=1@1,q=1@1,r=1@2]
+Current set of clauses:
+[[s],[s,~t],[t],[~s,t]]
+Propagate unit:  s (s=1@2) derived from: [~p,~r,s]
+Assignments so far:
+[p=1@1,q=1@1,r=1@2,s=1@2]
+Current set of clauses:
+[[t]]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=1@2,
+s=1@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,~r,s]--> s=1@2,
+r=1@2 --[~p,~r,s]--> s=1@2
+]
+Propagate unit:  t (t=1@2) derived from: [~s,t]
+Assignments so far:
+[p=1@1,q=1@1,r=1@2,s=1@2,t=1@2]
+Implication graph:
+[
+p=1@1,
+q=1@1,
+r=1@2,
+s=1@2,
+t=1@2
+]
+[
+p=1@1 --[~p,q]--> q=1@1,
+p=1@1 --[~p,~r,s]--> s=1@2,
+r=1@2 --[~p,~r,s]--> s=1@2,
+s=1@2 --[~s,t]--> t=1@2
+]
+Satisfying assignments:
+[p=1@1,q=1@1,r=1@2,s=1@2,t=1@2]
+Statistics: clauses=12, variables=5, units=10, decisions=6, conflicts=3, learned clauses=3
+
+******************************************
+*              Tseitin K2,2              *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p0,p1],[p0,~p2],[p1,~p3],[p2,~p3],[~p0,p2],[~p0,~p1],[~p1,p3],[~p2,p3]]
+Decision assignment: p0=0@1
+Variables: [p0,p1,p2,p3]
+Assignments so far:
+[p0=0@1]
+Current set of clauses:
+[[p1],[p1,~p3],[p2,~p3],[~p1,p3],[~p2],[~p2,p3]]
+Propagate unit:  p1 (p1=1@1) derived from: [p0,p1]
+Assignments so far:
+[p0=0@1,p1=1@1]
+Current set of clauses:
+[[p2,~p3],[p3],[~p2],[~p2,p3]]
+Implication graph:
+[
+p0=0@1,
+p1=1@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1
+]
+Propagate unit: ~p2 (p2=0@1) derived from: [p0,~p2]
+Assignments so far:
+[p0=0@1,p1=1@1,p2=0@1]
+Current set of clauses:
+[[p3],[~p3]]
+Implication graph:
+[
+p0=0@1,
+p1=1@1,
+p2=0@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1,
+p0=0@1 --[p0,~p2]--> p2=0@1
+]
+Propagate unit:  p3 (p3=1@1) derived from: [~p1,p3]
+Assignments so far:
+[p0=0@1,p1=1@1,p2=0@1,p3=1@1]
+Implication graph:
+[
+p0=0@1,
+p1=1@1,
+p2=0@1,
+p3=1@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1,
+p0=0@1 --[p0,~p2]--> p2=0@1,
+p1=1@1 --[~p1,p3]--> p3=1@1
+]
+Conflict clause: [p2,~p3]
+Conflict caused by assignments:
+[p0=0@1,p1=1@1,p2=0@1,p3=1@1]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=1@1,
+p2=0@1,
+p3=1@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1,
+p0=0@1 --[p0,~p2]--> p2=0@1,
+p1=1@1 --[~p1,p3]--> p3=1@1,
+p2=0@1 --[p2,~p3]--> kappa,
+p3=1@1 --[p2,~p3]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p0=0@1 --> p1=1@1 --> p3=1@1 --> kappa
+p0=0@1 --> p2=0@1 --> kappa
+A dominator is: p0=0@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [p0]
+Not a UIP: two literals [~p3,p2] are assigned at level: 1
+Resolvent: of [p2,~p3] and antecedent [~p1,p3] is [p2,~p1]
+Not a UIP: two literals [~p1,p2] are assigned at level: 1
+Resolvent: of [p2,~p1] and antecedent [p0,~p2] is [~p1,p0]
+Not a UIP: two literals [p0,~p1] are assigned at level: 1
+Resolvent: of [~p1,p0] and antecedent [p0,p1] is [p0]
+UIP: one literal p0 is assigned at level: 1
+Learned clause from resolution: [p0]
+Decision assignment: p0=1@1
+Variables: [p0,p1,p2,p3]
+Assignments so far:
+[p0=1@1]
+Current set of clauses:
+[[p1,~p3],[p2],[p2,~p3],[~p1],[~p1,p3],[~p2,p3]]
+Propagate unit: ~p1 (p1=0@1) derived from: [~p0,~p1]
+Assignments so far:
+[p0=1@1,p1=0@1]
+Current set of clauses:
+[[p2],[p2,~p3],[~p2,p3],[~p3]]
+Implication graph:
+[
+p0=1@1,
+p1=0@1
+]
+[
+p0=1@1 --[~p0,~p1]--> p1=0@1
+]
+Propagate unit:  p2 (p2=1@1) derived from: [~p0,p2]
+Assignments so far:
+[p0=1@1,p1=0@1,p2=1@1]
+Current set of clauses:
+[[p3],[~p3]]
+Implication graph:
+[
+p0=1@1,
+p1=0@1,
+p2=1@1
+]
+[
+p0=1@1 --[~p0,p2]--> p2=1@1,
+p0=1@1 --[~p0,~p1]--> p1=0@1
+]
+Propagate unit: ~p3 (p3=0@1) derived from: [p1,~p3]
+Assignments so far:
+[p0=1@1,p1=0@1,p2=1@1,p3=0@1]
+Implication graph:
+[
+p0=1@1,
+p1=0@1,
+p2=1@1,
+p3=0@1
+]
+[
+p0=1@1 --[~p0,p2]--> p2=1@1,
+p0=1@1 --[~p0,~p1]--> p1=0@1,
+p1=0@1 --[p1,~p3]--> p3=0@1
+]
+Conflict clause: [~p2,p3]
+Conflict caused by assignments:
+[p0=1@1,p1=0@1,p2=1@1,p3=0@1]
+Implication graph:
+[
+kappa,
+p0=1@1,
+p1=0@1,
+p2=1@1,
+p3=0@1
+]
+[
+p0=1@1 --[~p0,p2]--> p2=1@1,
+p0=1@1 --[~p0,~p1]--> p1=0@1,
+p1=0@1 --[p1,~p3]--> p3=0@1,
+p2=1@1 --[~p2,p3]--> kappa,
+p3=0@1 --[~p2,p3]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p0=1@1 --> p2=1@1 --> kappa
+p0=1@1 --> p1=0@1 --> p3=0@1 --> kappa
+A dominator is: p0=1@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [~p0]
+Not a UIP: two literals [p3,~p2] are assigned at level: 1
+Resolvent: of [~p2,p3] and antecedent [p1,~p3] is [~p2,p1]
+Not a UIP: two literals [p1,~p2] are assigned at level: 1
+Resolvent: of [~p2,p1] and antecedent [~p0,p2] is [p1,~p0]
+Not a UIP: two literals [~p0,p1] are assigned at level: 1
+Resolvent: of [p1,~p0] and antecedent [~p0,~p1] is [~p0]
+UIP: one literal ~p0 is assigned at level: 1
+Learned clause from resolution: [~p0]
+Unsatisfiable:
+Statistics: clauses=8, variables=4, units=6, decisions=2, conflicts=2, learned clauses=2
+
+******************************************
+*           Tseitin K2,2 (sat)           *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p0,p1],[p0,~p2],[p1,~p3],[p2,~p3],[~p0,p2],[~p0,~p1],[~p1,p3],[~p2,~p3]]
+Decision assignment: p0=0@1
+Variables: [p0,p1,p2,p3]
+Assignments so far:
+[p0=0@1]
+Current set of clauses:
+[[p1],[p1,~p3],[p2,~p3],[~p1,p3],[~p2],[~p2,~p3]]
+Propagate unit:  p1 (p1=1@1) derived from: [p0,p1]
+Assignments so far:
+[p0=0@1,p1=1@1]
+Current set of clauses:
+[[p2,~p3],[p3],[~p2],[~p2,~p3]]
+Implication graph:
+[
+p0=0@1,
+p1=1@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1
+]
+Propagate unit: ~p2 (p2=0@1) derived from: [p0,~p2]
+Assignments so far:
+[p0=0@1,p1=1@1,p2=0@1]
+Current set of clauses:
+[[p3],[~p3]]
+Implication graph:
+[
+p0=0@1,
+p1=1@1,
+p2=0@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1,
+p0=0@1 --[p0,~p2]--> p2=0@1
+]
+Propagate unit:  p3 (p3=1@1) derived from: [~p1,p3]
+Assignments so far:
+[p0=0@1,p1=1@1,p2=0@1,p3=1@1]
+Implication graph:
+[
+p0=0@1,
+p1=1@1,
+p2=0@1,
+p3=1@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1,
+p0=0@1 --[p0,~p2]--> p2=0@1,
+p1=1@1 --[~p1,p3]--> p3=1@1
+]
+Conflict clause: [p2,~p3]
+Conflict caused by assignments:
+[p0=0@1,p1=1@1,p2=0@1,p3=1@1]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=1@1,
+p2=0@1,
+p3=1@1
+]
+[
+p0=0@1 --[p0,p1]--> p1=1@1,
+p0=0@1 --[p0,~p2]--> p2=0@1,
+p1=1@1 --[~p1,p3]--> p3=1@1,
+p2=0@1 --[p2,~p3]--> kappa,
+p3=1@1 --[p2,~p3]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p0=0@1 --> p1=1@1 --> p3=1@1 --> kappa
+p0=0@1 --> p2=0@1 --> kappa
+A dominator is: p0=0@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [p0]
+Not a UIP: two literals [~p3,p2] are assigned at level: 1
+Resolvent: of [p2,~p3] and antecedent [~p1,p3] is [p2,~p1]
+Not a UIP: two literals [~p1,p2] are assigned at level: 1
+Resolvent: of [p2,~p1] and antecedent [p0,~p2] is [~p1,p0]
+Not a UIP: two literals [p0,~p1] are assigned at level: 1
+Resolvent: of [~p1,p0] and antecedent [p0,p1] is [p0]
+UIP: one literal p0 is assigned at level: 1
+Learned clause from resolution: [p0]
+Decision assignment: p0=1@1
+Variables: [p0,p1,p2,p3]
+Assignments so far:
+[p0=1@1]
+Current set of clauses:
+[[p1,~p3],[p2],[p2,~p3],[~p1],[~p1,p3],[~p2,~p3]]
+Propagate unit: ~p1 (p1=0@1) derived from: [~p0,~p1]
+Assignments so far:
+[p0=1@1,p1=0@1]
+Current set of clauses:
+[[p2],[p2,~p3],[~p2,~p3],[~p3]]
+Implication graph:
+[
+p0=1@1,
+p1=0@1
+]
+[
+p0=1@1 --[~p0,~p1]--> p1=0@1
+]
+Propagate unit:  p2 (p2=1@1) derived from: [~p0,p2]
+Assignments so far:
+[p0=1@1,p1=0@1,p2=1@1]
+Current set of clauses:
+[[~p3]]
+Implication graph:
+[
+p0=1@1,
+p1=0@1,
+p2=1@1
+]
+[
+p0=1@1 --[~p0,p2]--> p2=1@1,
+p0=1@1 --[~p0,~p1]--> p1=0@1
+]
+Propagate unit: ~p3 (p3=0@1) derived from: [p1,~p3]
+Assignments so far:
+[p0=1@1,p1=0@1,p2=1@1,p3=0@1]
+Implication graph:
+[
+p0=1@1,
+p1=0@1,
+p2=1@1,
+p3=0@1
+]
+[
+p0=1@1 --[~p0,p2]--> p2=1@1,
+p0=1@1 --[~p0,~p1]--> p1=0@1,
+p1=0@1 --[p1,~p3]--> p3=0@1
+]
+Satisfying assignments:
+[p0=1@1,p1=0@1,p2=1@1,p3=0@1]
+Statistics: clauses=8, variables=4, units=6, decisions=2, conflicts=1, learned clauses=1
+
+******************************************
+*           Tseitin K3,3 (sat)           *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[p0,p1,p2],[p0,p3,~p6],[p0,~p1,~p2],[p0,~p3,p6],[p1,p4,~p7],[p1,~p4,p7],[p2,p5,~p8],[p2,~p5,~p8],[p3,p4,~p5],[p3,~p4,p5],[p6,p7,~p8],[p6,~p7,p8],[~p0,p1,~p2],[~p0,p3,p6],[~p0,~p1,p2],[~p0,~p3,~p6],[~p1,p4,p7],[~p1,~p4,~p7],[~p2,p5,p8],[~p2,~p5,~p8],[~p3,p4,p5],[~p3,~p4,~p5],[~p6,p7,p8],[~p6,~p7,~p8]]
+Decision assignment: p0=0@1
+Variables: [p0,p1,p2,p3,p4,p5,p6,p7,p8]
+Assignments so far:
+[p0=0@1]
+Current set of clauses:
+[[p1,p2],[p1,p4,~p7],[p1,~p4,p7],[p2,p5,~p8],[p2,~p5,~p8],[p3,p4,~p5],[p3,~p4,p5],[p3,~p6],[p6,p7,~p8],[p6,~p7,p8],[~p1,p4,p7],[~p1,~p2],[~p1,~p4,~p7],[~p2,p5,p8],[~p2,~p5,~p8],[~p3,p4,p5],[~p3,p6],[~p3,~p4,~p5],[~p6,p7,p8],[~p6,~p7,~p8]]
+Decision assignment: p1=0@2
+Variables: [p1,p2,p3,p4,p5,p6,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2]
+Current set of clauses:
+[[p2],[p2,p5,~p8],[p2,~p5,~p8],[p3,p4,~p5],[p3,~p4,p5],[p3,~p6],[p4,~p7],[p6,p7,~p8],[p6,~p7,p8],[~p2,p5,p8],[~p2,~p5,~p8],[~p3,p4,p5],[~p3,p6],[~p3,~p4,~p5],[~p4,p7],[~p6,p7,p8],[~p6,~p7,~p8]]
+Propagate unit:  p2 (p2=1@2) derived from: [p0,p1,p2]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2]
+Current set of clauses:
+[[p3,p4,~p5],[p3,~p4,p5],[p3,~p6],[p4,~p7],[p5,p8],[p6,p7,~p8],[p6,~p7,p8],[~p3,p4,p5],[~p3,p6],[~p3,~p4,~p5],[~p4,p7],[~p5,~p8],[~p6,p7,p8],[~p6,~p7,~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p0,p1,p2]--> p2=1@2
+]
+Decision assignment: p3=0@3
+Variables: [p3,p4,p5,p6,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3]
+Current set of clauses:
+[[p4,~p5],[p4,~p7],[p5,p8],[p6,p7,~p8],[p6,~p7,p8],[~p4,p5],[~p4,p7],[~p5,~p8],[~p6],[~p6,p7,p8],[~p6,~p7,~p8]]
+Propagate unit: ~p6 (p6=0@3) derived from: [p0,p3,~p6]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p6=0@3]
+Current set of clauses:
+[[p4,~p5],[p4,~p7],[p5,p8],[p7,~p8],[~p4,p5],[~p4,p7],[~p5,~p8],[~p7,p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p6=0@3
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3
+]
+Decision assignment: p4=0@4
+Variables: [p4,p5,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=0@4,p6=0@3]
+Current set of clauses:
+[[p5,p8],[p7,~p8],[~p5],[~p5,~p8],[~p7],[~p7,p8]]
+Propagate unit: ~p5 (p5=0@4) derived from: [p3,p4,~p5]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3]
+Current set of clauses:
+[[p7,~p8],[p8],[~p7],[~p7,p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4
+]
+Propagate unit: ~p7 (p7=0@4) derived from: [p1,p4,~p7]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3,p7=0@4]
+Current set of clauses:
+[[p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3,
+p7=0@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,p4,~p7]--> p7=0@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p1,p4,~p7]--> p7=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4
+]
+Propagate unit: ~p8 (p8=0@4) derived from: [p6,p7,~p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3,p7=0@4,
+ p8=0@4]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3,
+p7=0@4,
+p8=0@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,p4,~p7]--> p7=0@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p1,p4,~p7]--> p7=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4,
+p6=0@3 --[p6,p7,~p8]--> p8=0@4,
+p7=0@4 --[p6,p7,~p8]--> p8=0@4
+]
+Conflict clause: [~p2,p5,p8]
+Conflict caused by assignments:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3,p7=0@4,
+ p8=0@4]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3,
+p7=0@4,
+p8=0@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,p4,~p7]--> p7=0@4,
+p2=1@2 --[~p2,p5,p8]--> kappa,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p1,p4,~p7]--> p7=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4,
+p5=0@4 --[~p2,p5,p8]--> kappa,
+p6=0@3 --[p6,p7,~p8]--> p8=0@4,
+p7=0@4 --[p6,p7,~p8]--> p8=0@4,
+p8=0@4 --[~p2,p5,p8]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p4=0@4 --> p7=0@4 --> p8=0@4 --> kappa
+p4=0@4 --> p5=0@4 --> kappa
+A dominator is: p4=0@4
+Paths from decision nodes at lower levels to kappa:
+p3=0@3 --> p5=0@4 --> kappa
+p3=0@3 --> p6=0@3 --> p8=0@4 --> kappa
+p1=0@2 --> p7=0@4 --> p8=0@4 --> kappa
+p1=0@2 --> p2=1@2 --> kappa
+p0=0@1 --> p6=0@3 --> p8=0@4 --> kappa
+p0=0@1 --> p2=1@2 --> kappa
+Learned clause from dominator: [p3,p6,p1,p4]
+Not a UIP: two literals [p8,p5] are assigned at level: 4
+Resolvent: of [~p2,p5,p8] and antecedent [p6,p7,~p8] is [~p2,p5,p6,p7]
+Not a UIP: two literals [p7,p5] are assigned at level: 4
+Resolvent: of [~p2,p5,p6,p7] and antecedent [p1,p4,~p7] is [~p2,p5,p6,p1,p4]
+Not a UIP: two literals [p4,p5] are assigned at level: 4
+Resolvent: of [~p2,p5,p6,p1,p4] and antecedent [p3,p4,~p5] is [~p2,p6,p1,p3,p4]
+UIP: one literal p4 is assigned at level: 4
+Learned clause from resolution: [~p2,p6,p1,p3,p4]
+Decision assignment: p4=1@4
+Variables: [p4,p5,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=1@4,p6=0@3]
+Current set of clauses:
+[[p5],[p5,p8],[p7],[p7,~p8],[~p5,~p8],[~p7,p8]]
+Propagate unit:  p5 (p5=1@4) derived from: [p3,~p4,p5]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3]
+Current set of clauses:
+[[p7],[p7,~p8],[~p7,p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4
+]
+Propagate unit:  p7 (p7=1@4) derived from: [p1,~p4,p7]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3,p7=1@4]
+Current set of clauses:
+[[p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3,
+p7=1@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,~p4,p7]--> p7=1@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p1,~p4,p7]--> p7=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4
+]
+Propagate unit:  p8 (p8=1@4) derived from: [p6,~p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3,p7=1@4,
+ p8=1@4]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3,
+p7=1@4,
+p8=1@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,~p4,p7]--> p7=1@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p1,~p4,p7]--> p7=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4,
+p6=0@3 --[p6,~p7,p8]--> p8=1@4,
+p7=1@4 --[p6,~p7,p8]--> p8=1@4
+]
+Conflict clause: [~p2,~p5,~p8]
+Conflict caused by assignments:
+[p0=0@1,p1=0@2,p2=1@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3,p7=1@4,
+ p8=1@4]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3,
+p7=1@4,
+p8=1@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,~p4,p7]--> p7=1@4,
+p2=1@2 --[~p2,~p5,~p8]--> kappa,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p1,~p4,p7]--> p7=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4,
+p5=1@4 --[~p2,~p5,~p8]--> kappa,
+p6=0@3 --[p6,~p7,p8]--> p8=1@4,
+p7=1@4 --[p6,~p7,p8]--> p8=1@4,
+p8=1@4 --[~p2,~p5,~p8]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p4=1@4 --> p7=1@4 --> p8=1@4 --> kappa
+p4=1@4 --> p5=1@4 --> kappa
+A dominator is: p4=1@4
+Paths from decision nodes at lower levels to kappa:
+p3=0@3 --> p5=1@4 --> kappa
+p3=0@3 --> p6=0@3 --> p8=1@4 --> kappa
+p1=0@2 --> p7=1@4 --> p8=1@4 --> kappa
+p1=0@2 --> p2=1@2 --> kappa
+p0=0@1 --> p6=0@3 --> p8=1@4 --> kappa
+p0=0@1 --> p2=1@2 --> kappa
+Learned clause from dominator: [p3,p6,p1,~p4]
+Not a UIP: two literals [~p8,~p5] are assigned at level: 4
+Resolvent: of [~p2,~p5,~p8] and antecedent [p6,~p7,p8] is [~p2,~p5,p6,~p7]
+Not a UIP: two literals [~p7,~p5] are assigned at level: 4
+Resolvent: of [~p2,~p5,p6,~p7] and antecedent [p1,~p4,p7] is [~p2,~p5,p6,p1,~p4]
+Not a UIP: two literals [~p4,~p5] are assigned at level: 4
+Resolvent: of [~p2,~p5,p6,p1,~p4] and antecedent [p3,~p4,p5] is [~p2,p6,p1,p3,~p4]
+UIP: one literal ~p4 is assigned at level: 4
+Learned clause from resolution: [~p2,p6,p1,p3,~p4]
+Decision assignment: p3=1@3
+Variables: [p3,p4,p5,p6,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3]
+Current set of clauses:
+[[p4,p5],[p4,~p7],[p5,p8],[p6],[p6,p7,~p8],[p6,~p7,p8],[~p4,p7],[~p4,~p5],[~p5,~p8],[~p6,p7,p8],[~p6,~p7,~p8]]
+Propagate unit:  p6 (p6=1@3) derived from: [p0,~p3,p6]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p6=1@3]
+Current set of clauses:
+[[p4,p5],[p4,~p7],[p5,p8],[p7,p8],[~p4,p7],[~p4,~p5],[~p5,~p8],[~p7,~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p6=1@3
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3
+]
+Decision assignment: p4=0@4
+Variables: [p4,p5,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=0@4,p6=1@3]
+Current set of clauses:
+[[p5],[p5,p8],[p7,p8],[~p5,~p8],[~p7],[~p7,~p8]]
+Propagate unit:  p5 (p5=1@4) derived from: [~p3,p4,p5]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=0@4,p5=1@4,p6=1@3]
+Current set of clauses:
+[[p7,p8],[~p7],[~p7,~p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=0@4,
+p5=1@4,
+p6=1@3
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,p4,p5]--> p5=1@4,
+p4=0@4 --[~p3,p4,p5]--> p5=1@4
+]
+Propagate unit: ~p7 (p7=0@4) derived from: [p1,p4,~p7]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=0@4,p5=1@4,p6=1@3,p7=0@4]
+Current set of clauses:
+[[p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=0@4,
+p5=1@4,
+p6=1@3,
+p7=0@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,p4,~p7]--> p7=0@4,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,p4,p5]--> p5=1@4,
+p4=0@4 --[p1,p4,~p7]--> p7=0@4,
+p4=0@4 --[~p3,p4,p5]--> p5=1@4
+]
+Propagate unit:  p8 (p8=1@4) derived from: [~p6,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=0@4,p5=1@4,p6=1@3,p7=0@4,
+ p8=1@4]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=0@4,
+p5=1@4,
+p6=1@3,
+p7=0@4,
+p8=1@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,p4,~p7]--> p7=0@4,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,p4,p5]--> p5=1@4,
+p4=0@4 --[p1,p4,~p7]--> p7=0@4,
+p4=0@4 --[~p3,p4,p5]--> p5=1@4,
+p6=1@3 --[~p6,p7,p8]--> p8=1@4,
+p7=0@4 --[~p6,p7,p8]--> p8=1@4
+]
+Conflict clause: [~p2,~p5,~p8]
+Conflict caused by assignments:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=0@4,p5=1@4,p6=1@3,p7=0@4,
+ p8=1@4]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=0@4,
+p5=1@4,
+p6=1@3,
+p7=0@4,
+p8=1@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,p4,~p7]--> p7=0@4,
+p2=1@2 --[~p2,~p5,~p8]--> kappa,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,p4,p5]--> p5=1@4,
+p4=0@4 --[p1,p4,~p7]--> p7=0@4,
+p4=0@4 --[~p3,p4,p5]--> p5=1@4,
+p5=1@4 --[~p2,~p5,~p8]--> kappa,
+p6=1@3 --[~p6,p7,p8]--> p8=1@4,
+p7=0@4 --[~p6,p7,p8]--> p8=1@4,
+p8=1@4 --[~p2,~p5,~p8]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p4=0@4 --> p7=0@4 --> p8=1@4 --> kappa
+p4=0@4 --> p5=1@4 --> kappa
+A dominator is: p4=0@4
+Paths from decision nodes at lower levels to kappa:
+p3=1@3 --> p5=1@4 --> kappa
+p3=1@3 --> p6=1@3 --> p8=1@4 --> kappa
+p1=0@2 --> p7=0@4 --> p8=1@4 --> kappa
+p1=0@2 --> p2=1@2 --> kappa
+p0=0@1 --> p6=1@3 --> p8=1@4 --> kappa
+p0=0@1 --> p2=1@2 --> kappa
+Learned clause from dominator: [~p3,~p6,p1,p4]
+Not a UIP: two literals [~p8,~p5] are assigned at level: 4
+Resolvent: of [~p2,~p5,~p8] and antecedent [~p6,p7,p8] is [~p2,~p5,~p6,p7]
+Not a UIP: two literals [p7,~p5] are assigned at level: 4
+Resolvent: of [~p2,~p5,~p6,p7] and antecedent [p1,p4,~p7] is [~p2,~p5,~p6,p1,p4]
+Not a UIP: two literals [p4,~p5] are assigned at level: 4
+Resolvent: of [~p2,~p5,~p6,p1,p4] and antecedent [~p3,p4,p5] is [~p2,~p6,p1,~p3,p4]
+UIP: one literal p4 is assigned at level: 4
+Learned clause from resolution: [~p2,~p6,p1,~p3,p4]
+Decision assignment: p4=1@4
+Variables: [p4,p5,p7,p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=1@4,p6=1@3]
+Current set of clauses:
+[[p5,p8],[p7],[p7,p8],[~p5],[~p5,~p8],[~p7,~p8]]
+Propagate unit: ~p5 (p5=0@4) derived from: [~p3,~p4,~p5]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=1@4,p5=0@4,p6=1@3]
+Current set of clauses:
+[[p7],[p7,p8],[p8],[~p7,~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=1@4,
+p5=0@4,
+p6=1@3
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,~p4,~p5]--> p5=0@4,
+p4=1@4 --[~p3,~p4,~p5]--> p5=0@4
+]
+Propagate unit:  p7 (p7=1@4) derived from: [p1,~p4,p7]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=1@4,p5=0@4,p6=1@3,p7=1@4]
+Current set of clauses:
+[[p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=1@4,
+p5=0@4,
+p6=1@3,
+p7=1@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,~p4,p7]--> p7=1@4,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,~p4,~p5]--> p5=0@4,
+p4=1@4 --[p1,~p4,p7]--> p7=1@4,
+p4=1@4 --[~p3,~p4,~p5]--> p5=0@4
+]
+Propagate unit: ~p8 (p8=0@4) derived from: [~p6,~p7,~p8]
+Assignments so far:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=1@4,p5=0@4,p6=1@3,p7=1@4,
+ p8=0@4]
+Implication graph:
+[
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=1@4,
+p5=0@4,
+p6=1@3,
+p7=1@4,
+p8=0@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,~p4,p7]--> p7=1@4,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,~p4,~p5]--> p5=0@4,
+p4=1@4 --[p1,~p4,p7]--> p7=1@4,
+p4=1@4 --[~p3,~p4,~p5]--> p5=0@4,
+p6=1@3 --[~p6,~p7,~p8]--> p8=0@4,
+p7=1@4 --[~p6,~p7,~p8]--> p8=0@4
+]
+Conflict clause: [~p2,p5,p8]
+Conflict caused by assignments:
+[p0=0@1,p1=0@2,p2=1@2,p3=1@3,p4=1@4,p5=0@4,p6=1@3,p7=1@4,
+ p8=0@4]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=0@2,
+p2=1@2,
+p3=1@3,
+p4=1@4,
+p5=0@4,
+p6=1@3,
+p7=1@4,
+p8=0@4
+]
+[
+p0=0@1 --[p0,p1,p2]--> p2=1@2,
+p0=0@1 --[p0,~p3,p6]--> p6=1@3,
+p1=0@2 --[p0,p1,p2]--> p2=1@2,
+p1=0@2 --[p1,~p4,p7]--> p7=1@4,
+p2=1@2 --[~p2,p5,p8]--> kappa,
+p3=1@3 --[p0,~p3,p6]--> p6=1@3,
+p3=1@3 --[~p3,~p4,~p5]--> p5=0@4,
+p4=1@4 --[p1,~p4,p7]--> p7=1@4,
+p4=1@4 --[~p3,~p4,~p5]--> p5=0@4,
+p5=0@4 --[~p2,p5,p8]--> kappa,
+p6=1@3 --[~p6,~p7,~p8]--> p8=0@4,
+p7=1@4 --[~p6,~p7,~p8]--> p8=0@4,
+p8=0@4 --[~p2,p5,p8]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p4=1@4 --> p7=1@4 --> p8=0@4 --> kappa
+p4=1@4 --> p5=0@4 --> kappa
+A dominator is: p4=1@4
+Paths from decision nodes at lower levels to kappa:
+p3=1@3 --> p5=0@4 --> kappa
+p3=1@3 --> p6=1@3 --> p8=0@4 --> kappa
+p1=0@2 --> p7=1@4 --> p8=0@4 --> kappa
+p1=0@2 --> p2=1@2 --> kappa
+p0=0@1 --> p6=1@3 --> p8=0@4 --> kappa
+p0=0@1 --> p2=1@2 --> kappa
+Learned clause from dominator: [~p3,~p6,p1,~p4]
+Not a UIP: two literals [p8,p5] are assigned at level: 4
+Resolvent: of [~p2,p5,p8] and antecedent [~p6,~p7,~p8] is [~p2,p5,~p6,~p7]
+Not a UIP: two literals [~p7,p5] are assigned at level: 4
+Resolvent: of [~p2,p5,~p6,~p7] and antecedent [p1,~p4,p7] is [~p2,p5,~p6,p1,~p4]
+Not a UIP: two literals [~p4,p5] are assigned at level: 4
+Resolvent: of [~p2,p5,~p6,p1,~p4] and antecedent [~p3,~p4,~p5] is [~p2,~p6,p1,~p3,~p4]
+UIP: one literal ~p4 is assigned at level: 4
+Learned clause from resolution: [~p2,~p6,p1,~p3,~p4]
+Decision assignment: p1=1@2
+Variables: [p1,p2,p3,p4,p5,p6,p7,p8]
+Assignments so far:
+[p0=0@1,p1=1@2]
+Current set of clauses:
+[[p2,p5,~p8],[p2,~p5,~p8],[p3,p4,~p5],[p3,~p4,p5],[p3,~p6],[p4,p7],[p6,p7,~p8],[p6,~p7,p8],[~p2],[~p2,p5,p8],[~p2,~p5,~p8],[~p3,p4,p5],[~p3,p6],[~p3,~p4,~p5],[~p4,~p7],[~p6,p7,p8],[~p6,~p7,~p8]]
+Propagate unit: ~p2 (p2=0@2) derived from: [p0,~p1,~p2]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2]
+Current set of clauses:
+[[p3,p4,~p5],[p3,~p4,p5],[p3,~p6],[p4,p7],[p5,~p8],[p6,p7,~p8],[p6,~p7,p8],[~p3,p4,p5],[~p3,p6],[~p3,~p4,~p5],[~p4,~p7],[~p5,~p8],[~p6,p7,p8],[~p6,~p7,~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2
+]
+[
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2
+]
+Decision assignment: p3=0@3
+Variables: [p3,p4,p5,p6,p7,p8]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3]
+Current set of clauses:
+[[p4,p7],[p4,~p5],[p5,~p8],[p6,p7,~p8],[p6,~p7,p8],[~p4,p5],[~p4,~p7],[~p5,~p8],[~p6],[~p6,p7,p8],[~p6,~p7,~p8]]
+Propagate unit: ~p6 (p6=0@3) derived from: [p0,p3,~p6]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p6=0@3]
+Current set of clauses:
+[[p4,p7],[p4,~p5],[p5,~p8],[p7,~p8],[~p4,p5],[~p4,~p7],[~p5,~p8],[~p7,p8]]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p6=0@3
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3
+]
+Decision assignment: p4=0@4
+Variables: [p4,p5,p7,p8]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=0@4,p6=0@3]
+Current set of clauses:
+[[p5,~p8],[p7],[p7,~p8],[~p5],[~p5,~p8],[~p7,p8]]
+Propagate unit: ~p5 (p5=0@4) derived from: [p3,p4,~p5]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3]
+Current set of clauses:
+[[p7],[p7,~p8],[~p7,p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4
+]
+Propagate unit:  p7 (p7=1@4) derived from: [~p1,p4,p7]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3,p7=1@4]
+Current set of clauses:
+[[p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3,
+p7=1@4
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[~p1,p4,p7]--> p7=1@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[~p1,p4,p7]--> p7=1@4
+]
+Propagate unit:  p8 (p8=1@4) derived from: [p6,~p7,p8]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3,p7=1@4,
+ p8=1@4]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3,
+p7=1@4,
+p8=1@4
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[~p1,p4,p7]--> p7=1@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[~p1,p4,p7]--> p7=1@4,
+p6=0@3 --[p6,~p7,p8]--> p8=1@4,
+p7=1@4 --[p6,~p7,p8]--> p8=1@4
+]
+Conflict clause: [p2,p5,~p8]
+Conflict caused by assignments:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=0@4,p5=0@4,p6=0@3,p7=1@4,
+ p8=1@4]
+Implication graph:
+[
+kappa,
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=0@4,
+p5=0@4,
+p6=0@3,
+p7=1@4,
+p8=1@4
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[~p1,p4,p7]--> p7=1@4,
+p2=0@2 --[p2,p5,~p8]--> kappa,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[p3,p4,~p5]--> p5=0@4,
+p4=0@4 --[~p1,p4,p7]--> p7=1@4,
+p5=0@4 --[p2,p5,~p8]--> kappa,
+p6=0@3 --[p6,~p7,p8]--> p8=1@4,
+p7=1@4 --[p6,~p7,p8]--> p8=1@4,
+p8=1@4 --[p2,p5,~p8]--> kappa
+]
+Paths from the decision node at this level to kappa:
+p4=0@4 --> p5=0@4 --> kappa
+p4=0@4 --> p7=1@4 --> p8=1@4 --> kappa
+A dominator is: p4=0@4
+Paths from decision nodes at lower levels to kappa:
+p3=0@3 --> p5=0@4 --> kappa
+p3=0@3 --> p6=0@3 --> p8=1@4 --> kappa
+p1=1@2 --> p7=1@4 --> p8=1@4 --> kappa
+p1=1@2 --> p2=0@2 --> kappa
+p0=0@1 --> p2=0@2 --> kappa
+p0=0@1 --> p6=0@3 --> p8=1@4 --> kappa
+Learned clause from dominator: [p3,p6,~p1,p4]
+Not a UIP: two literals [~p8,p5] are assigned at level: 4
+Resolvent: of [p2,p5,~p8] and antecedent [p6,~p7,p8] is [p2,p5,p6,~p7]
+Not a UIP: two literals [~p7,p5] are assigned at level: 4
+Resolvent: of [p2,p5,p6,~p7] and antecedent [~p1,p4,p7] is [p2,p5,p6,~p1,p4]
+Not a UIP: two literals [p4,p5] are assigned at level: 4
+Resolvent: of [p2,p5,p6,~p1,p4] and antecedent [p3,p4,~p5] is [p2,p6,~p1,p3,p4]
+UIP: one literal p4 is assigned at level: 4
+Learned clause from resolution: [p2,p6,~p1,p3,p4]
+Decision assignment: p4=1@4
+Variables: [p4,p5,p7,p8]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=1@4,p6=0@3]
+Current set of clauses:
+[[p5],[p5,~p8],[p7,~p8],[~p5,~p8],[~p7],[~p7,p8]]
+Propagate unit:  p5 (p5=1@4) derived from: [p3,~p4,p5]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3]
+Current set of clauses:
+[[p7,~p8],[~p7],[~p7,p8],[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4
+]
+Propagate unit: ~p7 (p7=0@4) derived from: [~p1,~p4,~p7]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3,p7=0@4]
+Current set of clauses:
+[[~p8]]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3,
+p7=0@4
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[~p1,~p4,~p7]--> p7=0@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[~p1,~p4,~p7]--> p7=0@4
+]
+Propagate unit: ~p8 (p8=0@4) derived from: [p6,p7,~p8]
+Assignments so far:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3,p7=0@4,
+ p8=0@4]
+Implication graph:
+[
+p0=0@1,
+p1=1@2,
+p2=0@2,
+p3=0@3,
+p4=1@4,
+p5=1@4,
+p6=0@3,
+p7=0@4,
+p8=0@4
+]
+[
+p0=0@1 --[p0,p3,~p6]--> p6=0@3,
+p0=0@1 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[p0,~p1,~p2]--> p2=0@2,
+p1=1@2 --[~p1,~p4,~p7]--> p7=0@4,
+p3=0@3 --[p0,p3,~p6]--> p6=0@3,
+p3=0@3 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[p3,~p4,p5]--> p5=1@4,
+p4=1@4 --[~p1,~p4,~p7]--> p7=0@4,
+p6=0@3 --[p6,p7,~p8]--> p8=0@4,
+p7=0@4 --[p6,p7,~p8]--> p8=0@4
+]
+Satisfying assignments:
+[p0=0@1,p1=1@2,p2=0@2,p3=0@3,p4=1@4,p5=1@4,p6=0@3,p7=0@4,
+ p8=0@4]
+Statistics: clauses=24, variables=9, units=23, decisions=12, conflicts=5, learned clauses=5
+
+******************************************
+*            Grid pebbling 2             *
+******************************************
+LearnSAT (version 2.0)
+Current set of clauses:
+[[q1,q2],[r1,r2],[~p1],[~p2],[~q1,~r1,p1,p2],[~q1,~r2,p1,p2],[~q2,~r1,p1,p2],[~q2,~r2,p1,p2]]
+Propagate unit: ~p1 (p1=0@0) derived from: [~p1]
+Assignments so far:
+[p1=0@0]
+Current set of clauses:
+[[q1,q2],[r1,r2],[~p2],[~q1,~r1,p2],[~q1,~r2,p2],[~q2,~r1,p2],[~q2,~r2,p2]]
+Implication graph:
+[
+p1=0@0
+]
+[
+
+]
+Propagate unit: ~p2 (p2=0@0) derived from: [~p2]
+Assignments so far:
+[p1=0@0,p2=0@0]
+Current set of clauses:
+[[q1,q2],[r1,r2],[~q1,~r1],[~q1,~r2],[~q2,~r1],[~q2,~r2]]
+Implication graph:
+[
+p1=0@0,
+p2=0@0
+]
+[
+
+]
+Decision assignment: q1=0@1
+Variables: [q1,q2,r1,r2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=0@1]
+Current set of clauses:
+[[q2],[r1,r2],[~q2,~r1],[~q2,~r2]]
+Propagate unit:  q2 (q2=1@1) derived from: [q1,q2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=0@1,q2=1@1]
+Current set of clauses:
+[[r1,r2],[~r1],[~r2]]
+Implication graph:
+[
+p1=0@0,
+p2=0@0,
+q1=0@1,
+q2=1@1
+]
+[
+q1=0@1 --[q1,q2]--> q2=1@1
+]
+Propagate unit: ~r1 (r1=0@1) derived from: [~q2,~r1,p1,p2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=0@1,q2=1@1,r1=0@1]
+Current set of clauses:
+[[r2],[~r2]]
+Implication graph:
+[
+p1=0@0,
+p2=0@0,
+q1=0@1,
+q2=1@1,
+r1=0@1
+]
+[
+p1=0@0 --[~q2,~r1,p1,p2]--> r1=0@1,
+p2=0@0 --[~q2,~r1,p1,p2]--> r1=0@1,
+q1=0@1 --[q1,q2]--> q2=1@1,
+q2=1@1 --[~q2,~r1,p1,p2]--> r1=0@1
+]
+Propagate unit: ~r2 (r2=0@1) derived from: [~q2,~r2,p1,p2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=0@1,q2=1@1,r1=0@1,r2=0@1]
+Implication graph:
+[
+p1=0@0,
+p2=0@0,
+q1=0@1,
+q2=1@1,
+r1=0@1,
+r2=0@1
+]
+[
+p1=0@0 --[~q2,~r1,p1,p2]--> r1=0@1,
+p1=0@0 --[~q2,~r2,p1,p2]--> r2=0@1,
+p2=0@0 --[~q2,~r1,p1,p2]--> r1=0@1,
+p2=0@0 --[~q2,~r2,p1,p2]--> r2=0@1,
+q1=0@1 --[q1,q2]--> q2=1@1,
+q2=1@1 --[~q2,~r1,p1,p2]--> r1=0@1,
+q2=1@1 --[~q2,~r2,p1,p2]--> r2=0@1
+]
+Conflict clause: [r1,r2]
+Conflict caused by assignments:
+[p1=0@0,p2=0@0,q1=0@1,q2=1@1,r1=0@1,r2=0@1]
+Implication graph:
+[
+kappa,
+p1=0@0,
+p2=0@0,
+q1=0@1,
+q2=1@1,
+r1=0@1,
+r2=0@1
+]
+[
+p1=0@0 --[~q2,~r1,p1,p2]--> r1=0@1,
+p1=0@0 --[~q2,~r2,p1,p2]--> r2=0@1,
+p2=0@0 --[~q2,~r1,p1,p2]--> r1=0@1,
+p2=0@0 --[~q2,~r2,p1,p2]--> r2=0@1,
+q1=0@1 --[q1,q2]--> q2=1@1,
+q2=1@1 --[~q2,~r1,p1,p2]--> r1=0@1,
+q2=1@1 --[~q2,~r2,p1,p2]--> r2=0@1,
+r1=0@1 --[r1,r2]--> kappa,
+r2=0@1 --[r1,r2]--> kappa
+]
+Paths from the decision node at this level to kappa:
+q1=0@1 --> q2=1@1 --> r1=0@1 --> kappa
+q1=0@1 --> q2=1@1 --> r2=0@1 --> kappa
+A dominator is: q2=1@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [~q2]
+Not a UIP: two literals [r2,r1] are assigned at level: 1
+Resolvent: of [r1,r2] and antecedent [~q2,~r2,p1,p2] is [r1,~q2,p1,p2]
+Not a UIP: two literals [~q2,r1] are assigned at level: 1
+Resolvent: of [r1,~q2,p1,p2] and antecedent [~q2,~r1,p1,p2] is [~q2,p1,p2]
+UIP: one literal ~q2 is assigned at level: 1
+Learned clause from resolution: [~q2,p1,p2]
+Non-chronological backtracking to level: 0
+Decision assignment: q1=1@1
+Variables: [q1,q2,r1,r2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=1@1]
+Current set of clauses:
+[[r1,r2],[~q2],[~q2,~r1],[~q2,~r2],[~r1],[~r2]]
+Propagate unit: ~r1 (r1=0@1) derived from: [~q1,~r1,p1,p2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=1@1,r1=0@1]
+Current set of clauses:
+[[r2],[~q2],[~q2,~r2],[~r2]]
+Implication graph:
+[
+p1=0@0,
+p2=0@0,
+q1=1@1,
+r1=0@1
+]
+[
+p1=0@0 --[~q1,~r1,p1,p2]--> r1=0@1,
+p2=0@0 --[~q1,~r1,p1,p2]--> r1=0@1,
+q1=1@1 --[~q1,~r1,p1,p2]--> r1=0@1
+]
+Propagate unit: ~r2 (r2=0@1) derived from: [~q1,~r2,p1,p2]
+Assignments so far:
+[p1=0@0,p2=0@0,q1=1@1,r1=0@1,r2=0@1]
+Implication graph:
+[
+p1=0@0,
+p2=0@0,
+q1=1@1,
+r1=0@1,
+r2=0@1
+]
+[
+p1=0@0 --[~q1,~r1,p1,p2]--> r1=0@1,
+p1=0@0 --[~q1,~r2,p1,p2]--> r2=0@1,
+p2=0@0 --[~q1,~r1,p1,p2]--> r1=0@1,
+p2=0@0 --[~q1,~r2,p1,p2]--> r2=0@1,
+q1=1@1 --[~q1,~r1,p1,p2]--> r1=0@1,
+q1=1@1 --[~q1,~r2,p1,p2]--> r2=0@1
+]
+Conflict clause: [r1,r2]
+Conflict caused by assignments:
+[p1=0@0,p2=0@0,q1=1@1,r1=0@1,r2=0@1]
+Implication graph:
+[
+kappa,
+p1=0@0,
+p2=0@0,
+q1=1@1,
+r1=0@1,
+r2=0@1
+]
+[
+p1=0@0 --[~q1,~r1,p1,p2]--> r1=0@1,
+p1=0@0 --[~q1,~r2,p1,p2]--> r2=0@1,
+p2=0@0 --[~q1,~r1,p1,p2]--> r1=0@1,
+p2=0@0 --[~q1,~r2,p1,p2]--> r2=0@1,
+q1=1@1 --[~q1,~r1,p1,p2]--> r1=0@1,
+q1=1@1 --[~q1,~r2,p1,p2]--> r2=0@1,
+r1=0@1 --[r1,r2]--> kappa,
+r2=0@1 --[r1,r2]--> kappa
+]
+Paths from the decision node at this level to kappa:
+q1=1@1 --> r1=0@1 --> kappa
+q1=1@1 --> r2=0@1 --> kappa
+A dominator is: q1=1@1
+Paths from decision nodes at lower levels to kappa:
+Learned clause from dominator: [~q1]
+Not a UIP: two literals [r2,r1] are assigned at level: 1
+Resolvent: of [r1,r2] and antecedent [~q1,~r2,p1,p2] is [r1,~q1,p1,p2]
+Not a UIP: two literals [~q1,r1] are assigned at level: 1
+Resolvent: of [r1,~q1,p1,p2] and antecedent [~q1,~r1,p1,p2] is [~q1,p1,p2]
+UIP: one literal ~q1 is assigned at level: 1
+Learned clause from resolution: [~q1,p1,p2]
+Unsatisfiable:
+Statistics: clauses=8, variables=6, units=7, decisions=2, conflicts=2, learned clauses=2
+
+******************************************
+*              Pigeonhole 3              *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=22, variables=12, units=25, decisions=10, conflicts=3, learned clauses=3
+
+******************************************
+*              Tseitin K3,3              *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=24, variables=9, units=60, decisions=30, conflicts=16, learned clauses=16
+
+******************************************
+*            Grid pebbling 3             *
+******************************************
+LearnSAT (version 2.0)
+Unsatisfiable:
+Statistics: clauses=17, variables=12, units=17, decisions=9, conflicts=3, learned clauses=3
+
+******************************************
+*        Tseitin K3,3 (ordering)         *
+******************************************
+LearnSAT (version 2.0)
+Decision assignment: p0=0
+Variables: [p0,p1,p2,p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p0=0]
+Decision assignment: p1=0
+Variables: [p1,p2,p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p1=0,p0=0]
+Propagate unit:  p2 (p2=1) derived from: [p0,p1,p2]
+Assignments so far:
+[p2=1,p1=0,p0=0]
+Decision assignment: p4=0
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=0,p2=1,p1=0,p0=0]
+Propagate unit: ~p7 (p7=0) derived from: [p1,p4,~p7]
+Assignments so far:
+[p7=0,p4=0,p2=1,p1=0,p0=0]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=0,p4=0,p2=1,p1=0,p0=0]
+Propagate unit: ~p5 (p5=0) derived from: [p3,p4,~p5]
+Assignments so far:
+[p5=0,p3=0,p7=0,p4=0,p2=1,p1=0,p0=0]
+Propagate unit: ~p6 (p6=0) derived from: [p0,p3,~p6]
+Assignments so far:
+[p6=0,p5=0,p3=0,p7=0,p4=0,p2=1,p1=0,p0=0]
+Propagate unit: ~p8 (p8=0) derived from: [p6,p7,~p8]
+Assignments so far:
+[p8=0,p6=0,p5=0,p3=0,p7=0,p4=0,p2=1,p1=0,
+ p0=0]
+Conflict clause: [~p2,p5,p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=0,p4=0,p2=1,p1=0,p0=0]
+Propagate unit:  p5 (p5=1) derived from: [~p3,p4,p5]
+Assignments so far:
+[p5=1,p3=1,p7=0,p4=0,p2=1,p1=0,p0=0]
+Propagate unit:  p6 (p6=1) derived from: [p0,~p3,p6]
+Assignments so far:
+[p6=1,p5=1,p3=1,p7=0,p4=0,p2=1,p1=0,p0=0]
+Propagate unit:  p8 (p8=1) derived from: [~p6,p7,p8]
+Assignments so far:
+[p8=1,p6=1,p5=1,p3=1,p7=0,p4=0,p2=1,p1=0,
+ p0=0]
+Conflict clause: [~p2,~p5,~p8]
+Decision assignment: p4=1
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=1,p2=1,p1=0,p0=0]
+Propagate unit:  p7 (p7=1) derived from: [p1,~p4,p7]
+Assignments so far:
+[p7=1,p4=1,p2=1,p1=0,p0=0]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=1,p4=1,p2=1,p1=0,p0=0]
+Propagate unit:  p5 (p5=1) derived from: [p3,~p4,p5]
+Assignments so far:
+[p5=1,p3=0,p7=1,p4=1,p2=1,p1=0,p0=0]
+Propagate unit: ~p6 (p6=0) derived from: [p0,p3,~p6]
+Assignments so far:
+[p6=0,p5=1,p3=0,p7=1,p4=1,p2=1,p1=0,p0=0]
+Propagate unit:  p8 (p8=1) derived from: [p6,~p7,p8]
+Assignments so far:
+[p8=1,p6=0,p5=1,p3=0,p7=1,p4=1,p2=1,p1=0,
+ p0=0]
+Conflict clause: [~p2,~p5,~p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=1,p4=1,p2=1,p1=0,p0=0]
+Propagate unit: ~p5 (p5=0) derived from: [~p3,~p4,~p5]
+Assignments so far:
+[p5=0,p3=1,p7=1,p4=1,p2=1,p1=0,p0=0]
+Propagate unit:  p6 (p6=1) derived from: [p0,~p3,p6]
+Assignments so far:
+[p6=1,p5=0,p3=1,p7=1,p4=1,p2=1,p1=0,p0=0]
+Propagate unit: ~p8 (p8=0) derived from: [~p6,~p7,~p8]
+Assignments so far:
+[p8=0,p6=1,p5=0,p3=1,p7=1,p4=1,p2=1,p1=0,
+ p0=0]
+Conflict clause: [~p2,p5,p8]
+Decision assignment: p1=1
+Variables: [p1,p2,p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p1=1,p0=0]
+Propagate unit: ~p2 (p2=0) derived from: [p0,~p1,~p2]
+Assignments so far:
+[p2=0,p1=1,p0=0]
+Decision assignment: p4=0
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=0,p2=0,p1=1,p0=0]
+Propagate unit:  p7 (p7=1) derived from: [~p1,p4,p7]
+Assignments so far:
+[p7=1,p4=0,p2=0,p1=1,p0=0]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=1,p4=0,p2=0,p1=1,p0=0]
+Propagate unit: ~p5 (p5=0) derived from: [p3,p4,~p5]
+Assignments so far:
+[p5=0,p3=0,p7=1,p4=0,p2=0,p1=1,p0=0]
+Propagate unit: ~p6 (p6=0) derived from: [p0,p3,~p6]
+Assignments so far:
+[p6=0,p5=0,p3=0,p7=1,p4=0,p2=0,p1=1,p0=0]
+Propagate unit:  p8 (p8=1) derived from: [p6,~p7,p8]
+Assignments so far:
+[p8=1,p6=0,p5=0,p3=0,p7=1,p4=0,p2=0,p1=1,
+ p0=0]
+Conflict clause: [p2,p5,~p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=1,p4=0,p2=0,p1=1,p0=0]
+Propagate unit:  p5 (p5=1) derived from: [~p3,p4,p5]
+Assignments so far:
+[p5=1,p3=1,p7=1,p4=0,p2=0,p1=1,p0=0]
+Propagate unit:  p6 (p6=1) derived from: [p0,~p3,p6]
+Assignments so far:
+[p6=1,p5=1,p3=1,p7=1,p4=0,p2=0,p1=1,p0=0]
+Propagate unit: ~p8 (p8=0) derived from: [~p6,~p7,~p8]
+Assignments so far:
+[p8=0,p6=1,p5=1,p3=1,p7=1,p4=0,p2=0,p1=1,
+ p0=0]
+Conflict clause: [p2,~p5,p8]
+Decision assignment: p4=1
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=1,p2=0,p1=1,p0=0]
+Propagate unit: ~p7 (p7=0) derived from: [~p1,~p4,~p7]
+Assignments so far:
+[p7=0,p4=1,p2=0,p1=1,p0=0]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=0,p4=1,p2=0,p1=1,p0=0]
+Propagate unit:  p5 (p5=1) derived from: [p3,~p4,p5]
+Assignments so far:
+[p5=1,p3=0,p7=0,p4=1,p2=0,p1=1,p0=0]
+Propagate unit: ~p6 (p6=0) derived from: [p0,p3,~p6]
+Assignments so far:
+[p6=0,p5=1,p3=0,p7=0,p4=1,p2=0,p1=1,p0=0]
+Propagate unit: ~p8 (p8=0) derived from: [p6,p7,~p8]
+Assignments so far:
+[p8=0,p6=0,p5=1,p3=0,p7=0,p4=1,p2=0,p1=1,
+ p0=0]
+Conflict clause: [p2,~p5,p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=0,p4=1,p2=0,p1=1,p0=0]
+Propagate unit: ~p5 (p5=0) derived from: [~p3,~p4,~p5]
+Assignments so far:
+[p5=0,p3=1,p7=0,p4=1,p2=0,p1=1,p0=0]
+Propagate unit:  p6 (p6=1) derived from: [p0,~p3,p6]
+Assignments so far:
+[p6=1,p5=0,p3=1,p7=0,p4=1,p2=0,p1=1,p0=0]
+Propagate unit:  p8 (p8=1) derived from: [~p6,p7,p8]
+Assignments so far:
+[p8=1,p6=1,p5=0,p3=1,p7=0,p4=1,p2=0,p1=1,
+ p0=0]
+Conflict clause: [p2,p5,~p8]
+Decision assignment: p0=1
+Variables: [p0,p1,p2,p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p0=1]
+Decision assignment: p1=0
+Variables: [p1,p2,p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p1=0,p0=1]
+Propagate unit: ~p2 (p2=0) derived from: [~p0,p1,~p2]
+Assignments so far:
+[p2=0,p1=0,p0=1]
+Decision assignment: p4=0
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=0,p2=0,p1=0,p0=1]
+Propagate unit: ~p7 (p7=0) derived from: [p1,p4,~p7]
+Assignments so far:
+[p7=0,p4=0,p2=0,p1=0,p0=1]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=0,p4=0,p2=0,p1=0,p0=1]
+Propagate unit: ~p5 (p5=0) derived from: [p3,p4,~p5]
+Assignments so far:
+[p5=0,p3=0,p7=0,p4=0,p2=0,p1=0,p0=1]
+Propagate unit:  p6 (p6=1) derived from: [~p0,p3,p6]
+Assignments so far:
+[p6=1,p5=0,p3=0,p7=0,p4=0,p2=0,p1=0,p0=1]
+Propagate unit:  p8 (p8=1) derived from: [~p6,p7,p8]
+Assignments so far:
+[p8=1,p6=1,p5=0,p3=0,p7=0,p4=0,p2=0,p1=0,
+ p0=1]
+Conflict clause: [p2,p5,~p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=0,p4=0,p2=0,p1=0,p0=1]
+Propagate unit:  p5 (p5=1) derived from: [~p3,p4,p5]
+Assignments so far:
+[p5=1,p3=1,p7=0,p4=0,p2=0,p1=0,p0=1]
+Propagate unit: ~p6 (p6=0) derived from: [~p0,~p3,~p6]
+Assignments so far:
+[p6=0,p5=1,p3=1,p7=0,p4=0,p2=0,p1=0,p0=1]
+Propagate unit: ~p8 (p8=0) derived from: [p6,p7,~p8]
+Assignments so far:
+[p8=0,p6=0,p5=1,p3=1,p7=0,p4=0,p2=0,p1=0,
+ p0=1]
+Conflict clause: [p2,~p5,p8]
+Decision assignment: p4=1
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=1,p2=0,p1=0,p0=1]
+Propagate unit:  p7 (p7=1) derived from: [p1,~p4,p7]
+Assignments so far:
+[p7=1,p4=1,p2=0,p1=0,p0=1]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=1,p4=1,p2=0,p1=0,p0=1]
+Propagate unit:  p5 (p5=1) derived from: [p3,~p4,p5]
+Assignments so far:
+[p5=1,p3=0,p7=1,p4=1,p2=0,p1=0,p0=1]
+Propagate unit:  p6 (p6=1) derived from: [~p0,p3,p6]
+Assignments so far:
+[p6=1,p5=1,p3=0,p7=1,p4=1,p2=0,p1=0,p0=1]
+Propagate unit: ~p8 (p8=0) derived from: [~p6,~p7,~p8]
+Assignments so far:
+[p8=0,p6=1,p5=1,p3=0,p7=1,p4=1,p2=0,p1=0,
+ p0=1]
+Conflict clause: [p2,~p5,p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=1,p4=1,p2=0,p1=0,p0=1]
+Propagate unit: ~p5 (p5=0) derived from: [~p3,~p4,~p5]
+Assignments so far:
+[p5=0,p3=1,p7=1,p4=1,p2=0,p1=0,p0=1]
+Propagate unit: ~p6 (p6=0) derived from: [~p0,~p3,~p6]
+Assignments so far:
+[p6=0,p5=0,p3=1,p7=1,p4=1,p2=0,p1=0,p0=1]
+Propagate unit:  p8 (p8=1) derived from: [p6,~p7,p8]
+Assignments so far:
+[p8=1,p6=0,p5=0,p3=1,p7=1,p4=1,p2=0,p1=0,
+ p0=1]
+Conflict clause: [p2,p5,~p8]
+Decision assignment: p1=1
+Variables: [p1,p2,p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p1=1,p0=1]
+Propagate unit:  p2 (p2=1) derived from: [~p0,~p1,p2]
+Assignments so far:
+[p2=1,p1=1,p0=1]
+Decision assignment: p4=0
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=0,p2=1,p1=1,p0=1]
+Propagate unit:  p7 (p7=1) derived from: [~p1,p4,p7]
+Assignments so far:
+[p7=1,p4=0,p2=1,p1=1,p0=1]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=1,p4=0,p2=1,p1=1,p0=1]
+Propagate unit: ~p5 (p5=0) derived from: [p3,p4,~p5]
+Assignments so far:
+[p5=0,p3=0,p7=1,p4=0,p2=1,p1=1,p0=1]
+Propagate unit:  p6 (p6=1) derived from: [~p0,p3,p6]
+Assignments so far:
+[p6=1,p5=0,p3=0,p7=1,p4=0,p2=1,p1=1,p0=1]
+Propagate unit: ~p8 (p8=0) derived from: [~p6,~p7,~p8]
+Assignments so far:
+[p8=0,p6=1,p5=0,p3=0,p7=1,p4=0,p2=1,p1=1,
+ p0=1]
+Conflict clause: [~p2,p5,p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=1,p4=0,p2=1,p1=1,p0=1]
+Propagate unit:  p5 (p5=1) derived from: [~p3,p4,p5]
+Assignments so far:
+[p5=1,p3=1,p7=1,p4=0,p2=1,p1=1,p0=1]
+Propagate unit: ~p6 (p6=0) derived from: [~p0,~p3,~p6]
+Assignments so far:
+[p6=0,p5=1,p3=1,p7=1,p4=0,p2=1,p1=1,p0=1]
+Propagate unit:  p8 (p8=1) derived from: [p6,~p7,p8]
+Assignments so far:
+[p8=1,p6=0,p5=1,p3=1,p7=1,p4=0,p2=1,p1=1,
+ p0=1]
+Conflict clause: [~p2,~p5,~p8]
+Decision assignment: p4=1
+Variables: [p4,p3,p5,p6,p7,p8]
+Assignments so far:
+[p4=1,p2=1,p1=1,p0=1]
+Propagate unit: ~p7 (p7=0) derived from: [~p1,~p4,~p7]
+Assignments so far:
+[p7=0,p4=1,p2=1,p1=1,p0=1]
+Decision assignment: p3=0
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=0,p7=0,p4=1,p2=1,p1=1,p0=1]
+Propagate unit:  p5 (p5=1) derived from: [p3,~p4,p5]
+Assignments so far:
+[p5=1,p3=0,p7=0,p4=1,p2=1,p1=1,p0=1]
+Propagate unit:  p6 (p6=1) derived from: [~p0,p3,p6]
+Assignments so far:
+[p6=1,p5=1,p3=0,p7=0,p4=1,p2=1,p1=1,p0=1]
+Propagate unit:  p8 (p8=1) derived from: [~p6,p7,p8]
+Assignments so far:
+[p8=1,p6=1,p5=1,p3=0,p7=0,p4=1,p2=1,p1=1,
+ p0=1]
+Conflict clause: [~p2,~p5,~p8]
+Decision assignment: p3=1
+Variables: [p3,p5,p6,p8]
+Assignments so far:
+[p3=1,p7=0,p4=1,p2=1,p1=1,p0=1]
+Propagate unit: ~p5 (p5=0) derived from: [~p3,~p4,~p5]
+Assignments so far:
+[p5=0,p3=1,p7=0,p4=1,p2=1,p1=1,p0=1]
+Propagate unit: ~p6 (p6=0) derived from: [~p0,~p3,~p6]
+Assignments so far:
+[p6=0,p5=0,p3=1,p7=0,p4=1,p2=1,p1=1,p0=1]
+Propagate unit: ~p8 (p8=0) derived from: [p6,p7,~p8]
+Assignments so far:
+[p8=0,p6=0,p5=0,p3=1,p7=0,p4=1,p2=1,p1=1,
+ p0=1]
+Conflict clause: [~p2,p5,p8]
+Unsatisfiable:
+Statistics: clauses=24, variables=9, units=60, decisions=30, conflicts=16
+
+******************************************
+*            MLM (lookahead)             *
+******************************************
+LearnSAT (version 2.0)
+Decision assignment: x4=0
+Variables: [x021,x031,x1,x2,x3,x4,x5,x6]
+Assignments so far:
+[x4=0]
+Decision assignment: x1=0
+Variables: [x021,x031,x1,x2,x3,x5,x6]
+Assignments so far:
+[x1=0,x4=0]
+Propagate unit: ~x3 (x3=0) derived from: [x1,~x3]
+Assignments so far:
+[x3=0,x1=0,x4=0]
+Propagate unit:  x2 (x2=1) derived from: [x2,x3,x4]
+Assignments so far:
+[x2=1,x3=0,x1=0,x4=0]
+Propagate unit:  x031 (x031=1) derived from: [x1,x031,~x2]
+Assignments so far:
+[x031=1,x2=1,x3=0,x1=0,x4=0]
+Decision assignment: x5=0
+Variables: [x021,x5,x6]
+Assignments so far:
+[x5=0,x031=1,x2=1,x3=0,x1=0,x4=0]
+Propagate unit:  x6 (x6=1) derived from: [x5,x6]
+Assignments so far:
+[x6=1,x5=0,x031=1,x2=1,x3=0,x1=0,x4=0]
+Satisfying assignments:
+[x6=1,x5=0,x031=1,x2=1,x3=0,x1=0,x4=0]
+Statistics: clauses=6, variables=8, units=4, decisions=3, conflicts=0
+
+******************************************
+*             MZ (lookahead)             *
+******************************************
+LearnSAT (version 2.0)
+Decision assignment: x7=0
+Variables: [x1,x3,x2,x7,x4,x8,x9,x10,x11,x12]
+Assignments so far:
+[x7=0]
+Decision assignment: x1=0
+Variables: [x1,x3,x2,x4,x8,x9,x10,x11,x12]
+Assignments so far:
+[x1=0,x7=0]
+Propagate unit:  x4 (x4=1) derived from: [x1,x4]
+Assignments so far:
+[x4=1,x1=0,x7=0]
+Decision assignment: x8=0
+Variables: [x3,x2,x8,x9,x10,x11,x12]
+Assignments so far:
+[x8=0,x4=1,x1=0,x7=0]
+Propagate unit:  x12 (x12=1) derived from: [x1,x8,x12]
+Assignments so far:
+[x12=1,x8=0,x4=1,x1=0,x7=0]
+Propagate unit: ~x10 (x10=0) derived from: [x7,x8,~x10]
+Assignments so far:
+[x10=0,x12=1,x8=0,x4=1,x1=0,x7=0]
+Conflict clause: [x7,x10,~x12]
+Decision assignment: x8=1
+Variables: [x3,x2,x8,x9,x10,x11,x12]
+Assignments so far:
+[x8=1,x4=1,x1=0,x7=0]
+Propagate unit: ~x3 (x3=0) derived from: [x1,~x3,~x8]
+Assignments so far:
+[x3=0,x8=1,x4=1,x1=0,x7=0]
+Decision assignment: x10=0
+Variables: [x2,x9,x10,x11,x12]
+Assignments so far:
+[x10=0,x3=0,x8=1,x4=1,x1=0,x7=0]
+Propagate unit: ~x12 (x12=0) derived from: [x7,x10,~x12]
+Assignments so far:
+[x12=0,x10=0,x3=0,x8=1,x4=1,x1=0,x7=0]
+Decision assignment: x11=0
+Variables: [x2,x9,x11]
+Assignments so far:
+[x11=0,x12=0,x10=0,x3=0,x8=1,x4=1,x1=0,x7=0]
+Propagate unit:  x2 (x2=1) derived from: [x2,x11]
+Assignments so far:
+[x2=1,x11=0,x12=0,x10=0,x3=0,x8=1,x4=1,x1=0,
+ x7=0]
+Satisfying assignments:
+[x2=1,x11=0,x12=0,x10=0,x3=0,x8=1,x4=1,x1=0,
+ x7=0]
+Statistics: clauses=8, variables=10, units=6, decisions=6, conflicts=1
+
+******************************************
+*             MS (lookahead)             *
+******************************************
+LearnSAT (version 2.0)
+Decision assignment: x1=0
+Variables: [ax9,bx10,cx11,dx12,dx13,x1,x2,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[x1=0]
+Propagate unit:  x2 (x2=1) derived from: [x1,x2]
+Assignments so far:
+[x2=1,x1=0]
+Decision assignment: x4=0
+Variables: [ax9,bx10,cx11,dx12,dx13,x3,x4,x5,x6,x7,x8]
+Assignments so far:
+[x4=0,x2=1,x1=0]
+Propagate unit: ~x3 (x3=0) derived from: [~x2,~x3,x4]
+Assignments so far:
+[x3=0,x4=0,x2=1,x1=0]
+Propagate unit:  ax9 (ax9=1) derived from: [x1,x3,ax9]
+Assignments so far:
+[ax9=1,x3=0,x4=0,x2=1,x1=0]
+Decision assignment: dx13=0
+Variables: [bx10,cx11,dx12,dx13,x5,x6,x7,x8]
+Assignments so far:
+[dx13=0,ax9=1,x3=0,x4=0,x2=1,x1=0]
+Decision assignment: x5=0
+Variables: [bx10,cx11,dx12,x5,x6,x7,x8]
+Assignments so far:
+[x5=0,dx13=0,ax9=1,x3=0,x4=0,x2=1,x1=0]
+Decision assignment: x7=0
+Variables: [bx10,cx11,dx12,x6,x7,x8]
+Assignments so far:
+[x7=0,x5=0,dx13=0,ax9=1,x3=0,x4=0,x2=1,x1=0]
+Satisfying assignments:
+[x7=0,x5=0,dx13=0,ax9=1,x3=0,x4=0,x2=1,x1=0]
+Statistics: clauses=9, variables=13, units=3, decisions=5, conflicts=0

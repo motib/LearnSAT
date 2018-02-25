@@ -1,0 +1,62 @@
+\begin{thebibliography}{10}
+
+\bibitem{primer}
+M.~Ben-Ari.
+\newblock A primer on model checking.
+\newblock {\em ACM Inroads}, 1(1):40--47.
+
+\bibitem{mlcs}
+M.~Ben-Ari.
+\newblock {\em Mathematical Logic for Computer Science (Third Edition)}.
+\newblock Springer, 2012.
+
+\bibitem{bmc}
+A.~Biere.
+\newblock {\em Bounded Model Checking}, chapter~14, pages 457--481.
+\newblock In Biere et~al. \cite{SAT}, 2009.
+
+\bibitem{SAT}
+A.~Biere, M.~Heule, H.~Van Maaren, and T.~Walsh, editors.
+\newblock {\em Handbook of Satisfiability}.
+\newblock {IOS} Press, 2009.
+
+\bibitem{brute}
+Marijn J.~H. Heule and Oliver Kullmann.
+\newblock The science of brute force.
+\newblock {\em Commun. ACM}, 60(8):70--79, 2017.
+
+\bibitem{look}
+Marijn J.~H. Heule and {van Maaren, H.}
+\newblock {\em Look-Ahead Based SAT Solvers}, chapter~5, pages 155--184.
+\newblock In Biere et~al. \cite{SAT}, 2009.
+
+\bibitem{knuth-sat}
+D.E. Knuth.
+\newblock {\em The Art of Computer Programming, Volume 4, Fascicle 6:
+  Satisfiability}.
+\newblock Pearson, 2015.
+
+\bibitem{mlm}
+J.~P. Marques-Silva, I.~Lynce, and S.~Malik.
+\newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
+  131--153.
+\newblock In Biere et~al. \cite{SAT}, 2009.
+
+\bibitem{miller-lang}
+J.E. Miller.
+\newblock {Langford's Problem}.
+\newblock \url{http://dialectrix.com/langford.html}.
+
+\bibitem{nadel}
+B.A. Nadel.
+\newblock Representation selection for constraint satisfaction: A case study
+  using n-queens.
+\newblock {\em IEEE Expert: Intelligent Systems and Their Applications},
+  5:16--23, June 1990.
+
+\bibitem{cnf}
+S.~Prestwich.
+\newblock {\em CNF Encodings}, chapter~2, pages 75--97.
+\newblock In Biere et~al. \cite{SAT}, 2009.
+
+\end{thebibliography}
