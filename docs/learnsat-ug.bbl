@@ -4,28 +4,12 @@
 M.~Ben-Ari.
 \newblock {\em Mathematical Logic for Computer Science (Third Edition)}.
 \newblock Springer, 2012.
+\newblock ISBN 978-1-4471-4129-7.
 
 \bibitem{SAT}
 A.~Biere, M.~Heule, H.~Van Maaren, and T.~Walsh, editors.
 \newblock {\em Handbook of Satisfiability}.
 \newblock {IOS} Press, 2009.
-
-\bibitem{mz}
-S.~Malik and L.~Zhang.
-\newblock Boolean satisfiability from theoretical hardness to practical
-  success.
-\newblock {\em Commun. ACM}, 52(8):76--82, 2009.
-
-\bibitem{mlm}
-J.~P. Marques-Silva, I.~Lynce, and S.~Malik.
-\newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
-  131--153.
-\newblock In Biere et~al. \cite{SAT}, 2009.
-
-\bibitem{ms}
-J.~P. Marques-Silva and K.~A. Sakallah.
-\newblock Grasp---a new search algorithm for satisfiability.
-\newblock In {\em Proceedings of the 1996 IEEE/ACM International Conference on
-  Computer-Aided Design}, ICCAD '96, pages 220--227, 1996.
+\newblock ISBN 978-1-60750-376-7.
 
 \end{thebibliography}
