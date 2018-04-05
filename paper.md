@@ -33,3 +33,5 @@ Three documents are included in the project:
 *	`learnsat-tutorial` Tutorial on SAT solving using LearnSAT.
 
 About 20 examples are included of encodings of problems that can be solved by LearnSAT.
+
+## References
