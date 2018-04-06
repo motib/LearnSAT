@@ -110,13 +110,17 @@ Sections~\ref{s.module}--\ref{s.aux} document the software and the program has e
 
 \section{Installation}
 
-\ls{} can be found on my website:
+\ls{} is published in the \textit{Journal of Open Source Software}:
+\begin{quote}
+Ben-Ari, M. (2018) LearnSAT: A SAT Solver for Education.\\ \textit{Journal of Open Source Software}, 3(24), 639.\\\url{https://doi.org/10.21105/joss.00639}.
+\end{quote}
+The software itself can be found on GitHub:
 \begin{center}
-\url{http://www.weizmann.ac.il/sci-tea/benari/software-and-learning-materials/}.
+\url{https://github.com/motib/LearnSAT}.
 \end{center}
+See the file \texttt{readme.md} for instructions for installing and running the software, and for the community guidelines for working on the project.
 
-Download and unzip the archive \p{learnsat-N.zip}. The \pl{} source code
-is in the directory \p{src}, programs are in the directory \p{examples} and the documentation is in the directory \p{docs}.
+There are three subdirectories: the \pl{} source code is in the directory \p{src}, programs are in the directory \p{examples} and the documentation is in the directory \p{docs}.
 
 Download and install \sw{}:
 \begin{center}
@@ -182,8 +186,6 @@ Once this file has been loaded (by double-clicking or by consulting
 ?- hole2. 
 \end{verbatim}
 can be run. It reports that the clauses are unsatisfiable. After it terminates with \p{true}, press return to get a new prompt.
-
-\newpage
 
 The output will be a trace of the DPLL algorithm:
 
