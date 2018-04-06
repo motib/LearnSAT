@@ -24,19 +24,23 @@ S.~Malik and L.~Zhang.
 \newblock Boolean satisfiability from theoretical hardness to practical
   success.
 \newblock {\em Commun. ACM}, 52(8):76--82, 2009.
-\newblock \url{http://dx.doi.org/10.1145/1536616.1536637}.
+\newblock \href {http://dx.doi.org/10.1145/1536616.1536637}
+  {\path{doi:10.1145/1536616.1536637}}.
 
 \bibitem{mlm}
 J.~P. Marques-Silva, I.~Lynce, and S.~Malik.
 \newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
   131--153.
 \newblock In Biere et~al. \cite{SAT}, 2009.
-\newblock \url{http://dx.doi.org/10.3233/978-1-58603-929-5-131}.
+\newblock ISBN 978-1-60750-376-7.
+\newblock \href {http://dx.doi.org/10.3233/978-1-58603-929-5-131}
+  {\path{doi:10.3233/978-1-58603-929-5-131}}.
 
 \bibitem{ms}
 J.~P. Marques-Silva and K.~A. Sakallah.
 \newblock Grasp: A search algorithm for propositional satisfiability.
-\newblock volume~48, pages 506--521, 1999.
-\newblock \url{http://dx.doi.org/10.1109/12.769433}.
+\newblock {\em IEEE Transactions on Computers}, 48(5):506--521, 1999.
+\newblock \href {http://dx.doi.org/10.1109/12.769433}
+  {\path{doi:10.1109/12.769433}}.
 
 \end{thebibliography}

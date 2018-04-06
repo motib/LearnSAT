@@ -4,7 +4,8 @@
 M.~Ben-Ari.
 \newblock A primer on model checking.
 \newblock {\em ACM Inroads}, 1(1):40--47.
-\newblock \url{http://dx.doi.org/10.1145/1721933.1721950}.
+\newblock \href {http://dx.doi.org/10.1145/1721933.1721950}
+  {\path{doi:10.1145/1721933.1721950}}.
 
 \bibitem{mlcs}
 M.~Ben-Ari.
@@ -16,7 +17,9 @@ M.~Ben-Ari.
 A.~Biere.
 \newblock {\em Bounded Model Checking}, chapter~14, pages 457--481.
 \newblock In Biere et~al. \cite{SAT}, 2009.
-\newblock \url{http://dx.doi.org/10.3233/978-1-58603-929-5-457}.
+\newblock ISBN 978-1-60750-376-7.
+\newblock \href {http://dx.doi.org/10.3233/978-1-58603-929-5-457}
+  {\path{doi:10.3233/978-1-58603-929-5-457}}.
 
 \bibitem{SAT}
 A.~Biere, M.~Heule, H.~Van Maaren, and T.~Walsh, editors.
@@ -28,13 +31,16 @@ A.~Biere, M.~Heule, H.~Van Maaren, and T.~Walsh, editors.
 Marijn J.~H. Heule and Oliver Kullmann.
 \newblock The science of brute force.
 \newblock {\em Commun. ACM}, 60(8):70--79, 2017.
-\newblock \url{http://dx.doi.org/10.1145/3107239}.
+\newblock \href {http://dx.doi.org/10.1145/3107239}
+  {\path{doi:10.1145/3107239}}.
 
 \bibitem{look}
 Marijn J.~H. Heule and {van Maaren, H.}
 \newblock {\em Look-Ahead Based SAT Solvers}, chapter~5, pages 155--184.
 \newblock In Biere et~al. \cite{SAT}, 2009.
-\newblock \url{http://dx.doi.org/10.3233/978-1-58603-929-5-155}.
+\newblock ISBN 978-1-60750-376-7.
+\newblock \href {http://dx.doi.org/10.3233/978-1-58603-929-5-155}
+  {\path{doi:10.3233/978-1-58603-929-5-155}}.
 
 \bibitem{knuth-sat}
 D.E. Knuth.
@@ -48,7 +54,9 @@ J.~P. Marques-Silva, I.~Lynce, and S.~Malik.
 \newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
   131--153.
 \newblock In Biere et~al. \cite{SAT}, 2009.
-\newblock \url{http://dx.doi.org/10.3233/978-1-58603-929-5-131}.
+\newblock ISBN 978-1-60750-376-7.
+\newblock \href {http://dx.doi.org/10.3233/978-1-58603-929-5-131}
+  {\path{doi:10.3233/978-1-58603-929-5-131}}.
 
 \bibitem{miller-lang}
 J.E. Miller.
@@ -61,12 +69,15 @@ B.A. Nadel.
   using n-queens.
 \newblock {\em IEEE Expert: Intelligent Systems and Their Applications},
   5:16--23, June 1990.
-\newblock \url{http://dx.doi.org/10.1109/64.54670}.
+\newblock \href {http://dx.doi.org/10.1109/64.54670}
+  {\path{doi:10.1109/64.54670}}.
 
 \bibitem{cnf}
 S.~Prestwich.
 \newblock {\em CNF Encodings}, chapter~2, pages 75--97.
 \newblock In Biere et~al. \cite{SAT}, 2009.
-\newblock \url{http://dx.doi.org/10.3233/978-1-58603-929-5-75}.
+\newblock ISBN 978-1-60750-376-7.
+\newblock \href {http://dx.doi.org/10.3233/978-1-58603-929-5-75}
+  {\path{doi:10.3233/978-1-58603-929-5-75}}.
 
 \end{thebibliography}
