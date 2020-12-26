@@ -137,7 +137,7 @@ The directory \p{docs} contains the PDF and \LaTeX{} files for this document, an
 
 \section{Running \ls}
 
-The main module is in the file \p{dpll.pro}. It exports the following
+The main module is in the file \p{dpll.pl}. It exports the following
 predicates which are the only predicates that you need to run \ls{}:
 
 \begin{center}
@@ -162,7 +162,7 @@ To check the satisfiability of a CNF formula, create a \pl{} program
 that calls the predicate \p{dpll} with the clausal form of the formula
 represented as a list of lists of literals. The predicate \p{use\_module} specifies the location of the \ls{} source code files. Alternatively, the \ls{} source files can be copied to the directory with the program.
 
-The file \p{pigeon.pro} contains programs for the pigeonhole principle; here is the program for two holes and three pigeons, where \p{pij} means that pigeon \p{i} is in hole \p{j}:
+The file \p{pigeon.pl} contains programs for the pigeonhole principle; here is the program for two holes and three pigeons, where \p{pij} means that pigeon \p{i} is in hole \p{j}:
 
 \begin{verbatim}
 :- use_module('../src/dpll').
@@ -337,10 +337,10 @@ antecedent clause : \verb+p1@3/[~p1,p3]+.
 
 \section{Configuration}
 
-\p{config.pro} contains: the default modes, the default display options, and the \dt{} prologue and decorations. The predicate \p{decorate\_mode} determines which family of decorations will be used.
+\p{config.pl} contains: the default modes, the default display options, and the \dt{} prologue and decorations. The predicate \p{decorate\_mode} determines which family of decorations will be used.
 
 \p{show\_config} displays: the version and copyright notice, the
-defaults from \p{config.pro}, changes from the default values, and the
+defaults from \p{config.pl}, changes from the default values, and the
 variable order.
 
 %\newpage
@@ -404,7 +404,7 @@ the implication graphs.
 
 \section{DIMACS transformation}
 
-The predicates in \p{dimacs.pro} convert a set of clauses in
+The predicates in \p{dimacs.pl} convert a set of clauses in
 \pl{} format (a list of lists of literals) to and from \emph{DIMACS cnf
 format}:
 \begin{itemize}
@@ -422,26 +422,26 @@ DIMACS format and writes a \pl{} program to \p{OutFile} as
 The \ls{} software consists of the following source files (not including the test programs and the program for DIMACS conversion):
 
 \begin{itemize}
-\item \p{dpll.pro}: Main module.
+\item \p{dpll.pl}: Main module.
 
-\item \p{cdcl.pro}: Algorithms for CDCL and the implication graph.
+\item \p{cdcl.pl}: Algorithms for CDCL and the implication graph.
 
-\item \p{auxpred.pro}: Auxiliary predicates for the algorithms. 
+\item \p{auxpred.pl}: Auxiliary predicates for the algorithms. 
 
-\item \p{io.pro}: Predicates for writing assignments, clauses and
+\item \p{io.pl}: Predicates for writing assignments, clauses and
 implication graphs.
 
-\item \p{display.pro}: Display the trace using predicates \p{display/n},
+\item \p{display.pl}: Display the trace using predicates \p{display/n},
 where the first argument is a display option and the additional
 arguments supply the data to be displayed.
 
-\item \p{config.pro}: Default configuration data.
+\item \p{config.pl}: Default configuration data.
 
-\item \p{counters.pro}: Maintains counters for the number of clauses, variables, units, decisions and conflicts. These are used for printing the statistics. Defines counters for adding a number to the file names for implication graphs and trees of assignments.
+\item \p{counters.pl}: Maintains counters for the number of clauses, variables, units, decisions and conflicts. These are used for printing the statistics. Defines counters for adding a number to the file names for implication graphs and trees of assignments.
 
-\item \p{modes.pro}: Sets, clears and checks the modes and the display options. Implements \p{usage} and \p{show\_config}. The dummy display option \p{none} is used to distinguish between the initial state (no options, so set the default options) and a state where all options have been cleared.
+\item \p{modes.pl}: Sets, clears and checks the modes and the display options. Implements \p{usage} and \p{show\_config}. The dummy display option \p{none} is used to distinguish between the initial state (no options, so set the default options) and a state where all options have been cleared.
 
-\item \p{dot.pro}: Generate the \dt{} files of the implication graphs
+\item \p{dot.pl}: Generate the \dt{} files of the implication graphs
 and the assignment trees.
 \end{itemize}
 
@@ -450,20 +450,20 @@ and the assignment trees.
 The following dynamic predicates are used:
 \begin{itemize}
 
-\item In \p{dpll.pro}: The counts of variable \p{occurrences} when \p{original} lookahead is enabled.
+\item In \p{dpll.pl}: The counts of variable \p{occurrences} when \p{original} lookahead is enabled.
 
-\item In \p{cdcl.pro}: The non-chronological backtracking level in the \p{backtrack}.
+\item In \p{cdcl.pl}: The non-chronological backtracking level in the \p{backtrack}.
 
-\item In \p{cdcl.pro}: The learned clauses are stored as a list in \p{learned}.
+\item In \p{cdcl.pl}: The learned clauses are stored as a list in \p{learned}.
 
-\item In \p{auxpred.pro}: If the user specifies the order of assignment
+\item In \p{auxpred.pl}: If the user specifies the order of assignment
 to variables, the list is stored in \p{variables\_list}.
 
-\item In \p{dot.pro}: \p{node} and \p{edge} are used when building the assignment trees. They store the paths leading to previous conflict nodes and are updated with each new path.
+\item In \p{dot.pl}: \p{node} and \p{edge} are used when building the assignment trees. They store the paths leading to previous conflict nodes and are updated with each new path.
 
-\item In \p{mode.pro}: \p{alg\_mode}, \p{look\_mode},\p{decorate\_mode}, \p{display\_option}.
+\item In \p{mode.pl}: \p{alg\_mode}, \p{look\_mode},\p{decorate\_mode}, \p{display\_option}.
 
-\item In \p{counters.pro}: Counters for reporting statistics and for generating \p{dot} file names.
+\item In \p{counters.pl}: Counters for reporting statistics and for generating \p{dot} file names.
 \end{itemize}
 
 Two functors are used to create terms:
@@ -516,7 +516,7 @@ returning \p{ok} or \p{conflict}. For each clause it calls
 
 \section{Lookahead}\label{s.look}
 
-The predicates for lookahead appear in \p{dpll.pro}. \p{choose\_variable\_current} takes the set of clauses and the current assignment and returns the chosen variable. First the clauses are evaluated under the current assignment; then the clauses are flattened into a single list of literals, which is transformed to a list of variables. The variable with the largest number of occurrences is returned. The number of occurrences of a variable is maintained as pair \p{Count-Variable}, which is sorted in descending order of \p{Count}. The list of pairs is computed by the predicate \p{count\_occurrences}.
+The predicates for lookahead appear in \p{dpll.pl}. \p{choose\_variable\_current} takes the set of clauses and the current assignment and returns the chosen variable. First the clauses are evaluated under the current assignment; then the clauses are flattened into a single list of literals, which is transformed to a list of variables. The variable with the largest number of occurrences is returned. The number of occurrences of a variable is maintained as pair \p{Count-Variable}, which is sorted in descending order of \p{Count}. The list of pairs is computed by the predicate \p{count\_occurrences}.
 
 For lookahead using the original set of clauses, \p{set\_original\_lookahead} is called during initialization to create the database \p{occurrences}. \p{choose\_variable\_original} finds the variable with the largest number of occurrences that has not yet been assigned. \p{update\_variable\_occurrences} is called when a clause has been learned to modify \p{occurrences}.
 

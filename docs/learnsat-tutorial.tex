@@ -290,14 +290,14 @@ $\mathcal{I}'$.
 
 \chapter{A detailed example}\label{ch.mlm}
 
-\fl{examples.pro}
+\fl{examples.pl}
 
 \section{The DPLL algorithm}\label{s.mlm}
 
 For the tutorial, we use the set of clauses from \cite{mlm} as our
 example.\footnote{\ls{} makes decision assignments in lexicographic
 order, so \p{x21} and \p{x31} have a \p{0} added to their names to
-preserve the order in \cite{mlm}. You can specify a different order using the \p{set\_order} command.} \p{examples.pro} contains the predicate \p{mlm} that runs \p{dpll} on this set of clauses:
+preserve the order in \cite{mlm}. You can specify a different order using the \p{set\_order} command.} \p{examples.pl} contains the predicate \p{mlm} that runs \p{dpll} on this set of clauses:
 
 \begin{verbatim}
 mlm :-
@@ -844,7 +844,7 @@ Problems from combinatorics are a rich source of examples for SAT solving. The c
 
 \section{The pigeonhole principle}\label{ch.pigeon}
 
-\fl{pigeon.pro}
+\fl{pigeon.pl}
 
 The pigeonhole principle states that if we place $n+1$ pigeons in $n$
 holes then one hole contains at least two pigeons. Therefore, a formula
@@ -953,7 +953,7 @@ are assigned at level~2.
 
 \section{The $n$-queens problem}\label{ch.queens}
 
-\fl{queens.pro}
+\fl{queens.pl}
 
 The $n$-queens problem is to place $n$ queens on an $n \times n$ chess
 board such that no queen can capture another. The archive includes programs for both $4$ queens and $8$ queens. Here we look at a $4\times 4$ board. A solution is:
@@ -1094,11 +1094,11 @@ satisfying assignment by unit propagation alone!
 
 \section{Sudoku}
 
-\fl{sudoku.pro}
+\fl{sudoku.pl}
 
 The encoding of an $n\times n$ Sudoku puzzle into CNF is straightforward but requires quite a few clauses. You need clauses to express that each of the $n$ numbers appear in each row, column and block, and that no number appears twice. The archive includes two CNF formulas for a $4\times 4$ Sudoku puzzle: one with the full CNF and one with a simpler CNF. The simpler CNF does not include that clauses specifying that no number appear twice in each row, column and block, because if all $n$ numbers appear once, than none appears twice. You can experiment to determine which encoding is more efficient.
 
-The CNF formulas were generated using a program by Ivor Spence that outputs DIMACS, which was converted to the \ls{} CNF format using the program \p{dimacs.pro}.\\
+The CNF formulas were generated using a program by Ivor Spence that outputs DIMACS, which was converted to the \ls{} CNF format using the program \p{dimacs.pl}.\\
 See: \url{http://www.cs.qub.ac.uk/~I.Spence/SuDoku/SuDoku.html}.
 
 \clearpage
@@ -1107,7 +1107,7 @@ See: \url{http://www.cs.qub.ac.uk/~I.Spence/SuDoku/SuDoku.html}.
 
 \section{Ramsey numbers}
 
-\fl{ramsey.pro}
+\fl{ramsey.pl}
 
 Ramsey's Theorem states that for any $n$, there is a smallest number $R(n)$ with the following property: If the edges of the complete graph on $R(n)$ vertices are colored with two colors then there must be a monochromatic complete subgraph with $n$ vertices. The archive contains CNF formulas that show that $R(3)>5$ and $R(3) = 6$. The following drawing shows that it is possible to color $K_5$ with two colors such that there is no monochromatic triangle.
 
@@ -1130,7 +1130,7 @@ For $K_6$, there is pair of clauses for each of the nineteen triangles. The form
 
 \section{Schur triples}
 
-\fl{schur.pro}
+\fl{schur.pl}
 
 Given \emph{any} decomposition of the natural numbers $S=\{1,\ldots,n\}$ into two mutually exclusive subsets $S_1,S_2$, do there exist $a,b,c\in S_i$, $a<b<c$, $a+b=c$, for at least one $i=1,2$? The set of numbers $\{a,b,c\}$ is called a \emph{Schur triple}. For $n=8$, there are decompositions with no triples:
 \[
@@ -1148,7 +1148,7 @@ For $n=8$ the formula is satifiable, but for $n=9$ it is unsatisfiable.
 
 \section{Langford's problem}
 
-\fl{generate-langford.pro, langford.pro}
+\fl{generate-langford.pl, langford.pl}
 
 Langford's problem $L(n)$ asks if it is possible to arrange pairs of numbers $1,1,2,2,3,3,\ldots,n,n$ in a sequence so the two occurrences of each number $k$ are separated by $k$ other numbers. It is easy to see that $312132$ is a solution for $n=3$ and $41312432$ is a solution for $n=4$. Here we show how to solve $L(3)$ and $L(4)$ using SAT solving. The presentation is based on \cite{knuth-sat}; for more information on Langford's problem see \cite{miller-lang}.
 
@@ -1218,7 +1218,7 @@ The reader is encouraged to check if \texttt{cdcl}, \texttt{ncb} or \texttt{look
 
 \section{van der Waerden's problem}
 
-\fl{generate-vdw.pro, vdw.pro}
+\fl{generate-vdw.pl, vdw.pl}
 
 Consider two sequences of eight binary digits:
 \[
@@ -1256,13 +1256,13 @@ and corresponds to the sequence $00110011$ which has no equally spaced subsequen
 \end{verbatim}
 \ls{} now returns that the formula is unsatisfiable, meaning that there is no sequence without an equally spaced subsequence of length three.
 
-The archive contains formulas that show that there are sequences of length $n=34$ with no equally spaced subsequences of length four, but that is not possible for sequences of length $n=35$. All formulas were generated by the program \p{generate-vdw.pro}.
+The archive contains formulas that show that there are sequences of length $n=34$ with no equally spaced subsequences of length four, but that is not possible for sequences of length $n=35$. All formulas were generated by the program \p{generate-vdw.pl}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Pebbling formulas}
 
-\fl{pebbling.pro}
+\fl{pebbling.pl}
 
 A pebbling formula represents the scheduling of tasks. Each task is
 represented by a node in a directed acylic graph. In the following
@@ -1421,7 +1421,7 @@ ncb:   units=26, decisions=21, conflicts=9
 These examples were contributed by Na'ama Tal and Nili Gilboa Luria.
 \end{center}
 
-\fl{tablea.pro, tableb.pro, tablec.pro}
+\fl{tablea.pl, tableb.pl, tablec.pl}
 
 Solving problems in the presence of constraints is an important
 application of SAT solving because constraints are easily expressed as
@@ -1503,7 +1503,7 @@ There is one three-literal clause for each of the six chairs.
 
 The archive contains three problems for seating guests.
 
-File \p{tablea.pro} encodes the constraints:
+File \p{tablea.pl} encodes the constraints:
 \begin{itemize}
 \item $g_1$ refuses to sit next to $g_2$
 \item $g_4$ refuses to sit next to $g_5$
@@ -1520,7 +1520,7 @@ and is solved in \emph{all} modes with the statistics:
   units=44, decisions=15, conflicts=2, learned clauses=0
 \end{verbatim}
 
-File \p{tableb.pro} encodes the constraints:
+File \p{tableb.pl} encodes the constraints:
 \begin{itemize}
 \item $g_1$ refuses to sit next to $g_2$
 \item $g_4$ refuses to sit next to $g_5$
@@ -1535,7 +1535,7 @@ difference in the statistics in the different modes:
   units=759, decisions=120, conflicts=61, learned clauses=5
 \end{verbatim}
 
-File \p{tablec.pro} encodes the constraints:
+File \p{tablec.pl} encodes the constraints:
 \begin{itemize}
 \item $g_1$ refuses to sit next to $g_2$
 \item $g_3$ must  sit next to $g_4$
@@ -1558,7 +1558,7 @@ algorithms improve performance.
 
 \section{Graph coloring}\label{s.graph-color}
 
-\fl{mcgregor.pro}
+\fl{mcgregor.pl}
 
 One of the most famous mathematical problems concerns the coloring of planar graphs, often called maps, such that no adjacent areas receive the same color.\footnote{This section is based on \cite[pp. 7, 134]{knuth-sat}} In 1976 was the Four Color Theorem proved that four colors are sufficient. Shortly before the proof appeared, Martin Gardner claimed \emph{five} colors were needed to color a map called the \emph{McGregor graph of order $10$}. This was one of a series of spoofs for April Fools day, though many reader were taken in.
 
@@ -1590,7 +1590,7 @@ Run the program and check that the variables assigned \p{1} define a correct fou
 
 \section{Colored queens}\label{s.color-queens}
 
-\fl{color-queens.pro}
+\fl{color-queens.pl}
 
 Can you place $k$ colored queens on every square of an $n\times n$ board such that no color appears more than once in any row, column or diagonal? For a $4\times 4$ board, the left diagram below shows a failed attempt to assign four colors (A,B,C,D). Although no color appears more than once in any row or column, colors appear multiple times on the diagonals. In fact, there is no solution to the problem for four colors, but there are solutions for five colors (A,B,C,D,E) as seen in the right diagram:
 
@@ -1668,7 +1668,7 @@ Write sets of clauses to prove the obvious facts that you can't color a $2\times
 
 \section{Tseitin graphs}\label{s.tseitin}
 
-\fl{GenerateSatPRO.java, tseitin.pro}
+\fl{GenerateSatPRO.java, tseitin.pl}
 
 G.S. Tseitin used formulas associated with graphs in his research on the
 complexity of resolution.\footnote{See \cite[Section 4.5]{mlcs} for a
@@ -1742,7 +1742,7 @@ The archive includes programs for Tseitin clauses on the bipartite graphs $K_{2,
 
 \chapter{Bounded model checking}\label{ch.model}
 
-\fl{bmc-generate-sem.pro, bmc-sem.pro}
+\fl{bmc-generate-sem.pl, bmc-sem.pl}
 
 Model checking a method for verifying the correctness of computer
 hardware and software. A model checker inputs a formal description of a
@@ -1864,10 +1864,10 @@ of the semaphore is irrelevant.}
 The resulting formula is satisfiable if and only if mutual exclusion
 does not hold within two steps.
 
-The program \p{bmc-sem.pro} contains a predicate \p{generate} that takes
-the above formula, converts it to CNF and writes (on file \p{bmc.pro})
+The program \p{bmc-sem.pl} contains a predicate \p{generate} that takes
+the above formula, converts it to CNF and writes (on file \p{bmc.pl})
 the set of clauses in the correct form for running
-\ls{}.\footnote{The program uses files \p{cnf.pro} and \p{ops.pro}
+\ls{}.\footnote{The program uses files \p{cnf.pl} and \p{ops.pl}
 that were adapted from the program archive that accompanies
 \cite{mlcs}.}
 
@@ -1875,7 +1875,7 @@ that were adapted from the program archive that accompanies
 
 \section{Running the SAT solver on the encoding}
 
-Load the file \p{bmc.pro}-sem in the \textsc{Prolog} compiler and run the predicate \p{bmc}. The result is that the formula is unsatisfiable, meaning that a violation of mutual exclusion does not happen within the first two steps. Of course, it is possible that it occurs after step 3, or step 4, or step 100, but from the structure of the program that seems unlikely.
+Load the file \p{bmc.pl}-sem in the \textsc{Prolog} compiler and run the predicate \p{bmc}. The result is that the formula is unsatisfiable, meaning that a violation of mutual exclusion does not happen within the first two steps. Of course, it is possible that it occurs after step 3, or step 4, or step 100, but from the structure of the program that seems unlikely.
 
 The statistics for the three different modes are:
 \begin{verbatim}
