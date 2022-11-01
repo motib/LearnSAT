@@ -1,10 +1,15 @@
-% Copyright 2017 by M. Ben-Ari. GNU GPL. See copyright.txt.
+% Copyright 2017, 2022 by M. Ben-Ari. GNU GPL. See copyright.txt.
 
 %  Schur triples
-%  If duplicates are allowed, 4 may not have triples but 5 does
 %  Without duplicates, 8 may not have triples but 9 does
 
 :- use_module('../src/dpll').
+
+% If duplicates are allowed, 4 may not have triples but 5 does
+
+% xi is true  if i in S1
+% xi is false if i in S2
+% xia, xib for duplicate numbers
 
 schur4 :-
   dpll(
@@ -25,6 +30,11 @@ schur5 :-
   [x1a,x4,x5], [~x1a,~x4,~x5],
   [x2a,x3,x5], [~x2a,~x3,~x5]
   ], _).
+
+% Without duplicates, 8 may not have triples but 9 does
+
+% xi is true  if i in S1
+% xi is false if i in S2
 
 schur8 :-
   dpll(

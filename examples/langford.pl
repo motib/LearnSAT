@@ -1,5 +1,7 @@
 :- use_module('../src/dpll').
 
+% xi is true if and only if row i is chosen
+
 langford3 :- dpll([
   [x1,x2,x3,x4],
   [~x1,~x2],

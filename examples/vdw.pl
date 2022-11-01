@@ -1,5 +1,10 @@
 :- use_module('../src/dpll').
 
+% van der Waerden's problem
+
+% xi is true  if xi is colored red
+% xi is false if xi is colored blue
+%
 vdw8 :- dpll(
 [
 [x1,x2,x3],[~x1,~x2,~x3],

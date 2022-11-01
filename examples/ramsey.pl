@@ -5,6 +5,11 @@
 
 :- use_module('../src/dpll').
 
+% pij is true  if the edge from vertex i to vertex j
+%   is colored blue
+% pij is false if the edge from vertex i to vertex j
+%   is colored red
+
 ramsey5 :-
   dpll(
   [
